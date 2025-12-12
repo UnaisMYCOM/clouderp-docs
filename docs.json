@@ -22,12 +22,12 @@
     "pages": [
       {
         "title": "Location Setup",
-        "href": "/location",
+        "href": "location_setup/location",
         "icon": "arrow-right"
       },
       {
         "title": "Divison Setup",
-        "href": "/division",
+        "href": "location_setup/division",
         "icon": "arrow-right"
       }
     ]
