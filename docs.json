@@ -29,6 +29,16 @@
         "title": "Divison Setup",
         "href": "location_setup/division",
         "icon": "arrow-right"
+      },
+      {
+        "title": "Sub location Setup",
+        "href": "location_setup/sub_location",
+        "icon": "arrow-right"
+      },
+      {
+        "title": "POS Machine Setup",
+        "href": "location_setup/pos_machine",
+        "icon": "arrow-right"
       }
     ]
   }
