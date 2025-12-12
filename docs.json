@@ -6,13 +6,23 @@
     "group": "Getting Started",
     "pages": [
       {
-        "title": "Getting to know docs.page",
+        "title": "Welcome to Cloud ERP ",
         "href": "/",
         "icon": "rocket"
       },
       {
         "title": "Next Steps",
         "href": "/next-steps",
+        "icon": "arrow-right"
+      }
+    ]
+  },
+    {
+    "group": "Location Setup",
+    "pages": [
+      {
+        "title": "Location Setup",
+        "href": "/location",
         "icon": "arrow-right"
       }
     ]
