@@ -24,6 +24,11 @@
         "title": "Location Setup",
         "href": "/location",
         "icon": "arrow-right"
+      },
+      {
+        "title": "Divison Setup",
+        "href": "/divison",
+        "icon": "arrow-right"
       }
     ]
   }
