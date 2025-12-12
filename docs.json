@@ -46,6 +46,15 @@
         "icon": "arrow-right"
       }
     ]
+  } ,{
+    "group": "Product Managment",
+    "pages": [
+      {
+        "title": "Groups",
+        "href": "/product/groups",
+        "icon": "arrow-right"
+      }
+    ]
   }
 ]
 }
