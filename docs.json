@@ -39,6 +39,11 @@
         "title": "POS Machine Setup",
         "href": "location_setup/pos_machine",
         "icon": "arrow-right"
+      },
+      {
+        "title": "Time Setup",
+        "href": "location_setup/time",
+        "icon": "arrow-right"
       }
     ]
   }
