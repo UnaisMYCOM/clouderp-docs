@@ -9,11 +9,6 @@
         "title": "Welcome to Cloud ERP ",
         "href": "/",
         "icon": "rocket"
-      },
-      {
-        "title": "Next Steps",
-        "href": "/next-steps",
-        "icon": "arrow-right"
       }
     ]
   },
