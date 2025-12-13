@@ -48,6 +48,11 @@
         "title": "Groups",
         "href": "/product/groups",
         "icon": "arrow-right"
+      },
+      {
+        "title": "Products",
+        "href": "/product/product",
+        "icon": "arrow-right"
       }
     ]
   }
