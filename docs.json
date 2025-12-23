@@ -53,6 +53,11 @@
         "title": "Products",
         "href": "/product/product",
         "icon": "arrow-right"
+      },
+      {
+        "title": "Options",
+        "href": "/product/Options",
+        "icon": "arrow-right"
       }
     ]
   }

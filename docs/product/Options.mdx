@@ -1,0 +1,79 @@
+# Menu Item Options (Side Items & Modifiers)
+
+In our system, **options** are categorized as either **Side Items** or **Modifiers**. These allow you to add extra selections or customizations for a menu item.  
+
+**Example:**  
+- **Main Item:** Pizza  
+- **Side Item (Option Group):** Toppings  
+  - **Options within the group:** Olives, Cheese, Mushrooms, etc.  
+- **Modifier (Option Group):** Customizations  
+  - **Options within the group:** Less Sugar, Less Salt, Extra Sauce, No Onion, etc.
+
+> **Tip:** You can create a **general master option group** that can be reused across multiple items. This saves time and ensures consistency for common side items or modifiers.
+
+---
+
+## How to Add and Manage Options
+
+### 1. Navigate to Options
+- Go to **Product Management**.  
+- Click the **dropdown** on the left side and select **Options**.  
+
+---
+
+### 2. Options Tabs
+When creating an option group, there are three main tabs:
+
+| Field | Description |
+|-------|-------------|
+| **Option Type** | Choose **Side Items** (like toppings) or **Modifier** (like extra sauce, less sugar, etc.) |
+| **Code** | Unique code for the option group (e.g., `SI001`) |
+| **Name** | Display name for the option group |
+| **Division Code** | Can be `All` or specific to a division |
+| **Minimum** | Minimum number of selections required |
+| **Maximum** | Maximum number of selections allowed |
+
+![ERP Options Group Screenshot](/images/options_group.png)
+
+> **Tip:** If this is a common option group (like "Toppings" or "Customizations"), you can create it as a **general master** and reuse it across multiple items.
+
+---
+
+### 3. Save the Option Group
+- After filling in the details, click **Save**.  
+- Then, click **Options** at the bottom **DataBake** section.  
+- This is where you add individual options to the group.
+
+![ERP Groups Screenshot](/images/groups.png)
+
+---
+
+### 4. Add Individual Options
+In the **Options Table**:
+
+| Field | Description |
+|-------|-------------|
+| **Option Code** | Unique code for the option (e.g., `SI001-01`) |
+| **Description** | Name of the option (e.g., Cheese or Less Sugar) |
+| **Description 2** | Name in the second language (if applicable) |
+| **Price** | Price of the option (can be `0`) |
+
+- Click **Save** after entering the option details.  
+- These individual options will now be linked to the option group and can be assigned wherever needed.
+
+![ERP Groups Screenshot](/images/options.png)
+
+---
+
+### 5. Assign Option Group
+- Go to the **Assign Option Group** tab.  
+- You can assign the group to:
+  - **Entire group** (applies to all items in the group)  
+  - **Specific item** (select a group, then select the item)  
+- Click **Save** to complete the assignment.
+
+![ERP Groups Screenshot](/images/Options_assigned.png)
+
+> **Tip:** Using general master option groups allows you to maintain consistency, reduce duplication, and make updates easily across all items where the group is applied.
+
+---
