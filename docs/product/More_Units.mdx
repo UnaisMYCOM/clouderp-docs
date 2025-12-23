@@ -1,0 +1,55 @@
+# Menu More Units
+
+The **Menu More Units** feature allows you to create multiple sizes or variations of a parent item. For example:  
+
+- **Parent Item:** Pizza  
+- **Child Items / Variations:** Small, Medium, Large (with different prices)  
+
+This is managed using the **item_level** dropdown, allowing you to chain all variations to the parent item.  
+
+**Example Structure:**  
+
+| Item | Product ID | Master Product ID |
+|------|------------|-----------------|
+| Pizza (Parent) | 001 | - |
+| Pizza Small | 001 | 001 |
+| Pizza Medium | 001 | 001 |
+| Pizza Large | 001 | 001 |
+
+> **Tip:** In the POS, users will see **one button** for Pizza. When clicked, it will show the available sizes/options.
+
+---
+
+## Steps to Create Menu More Units
+
+### 1. Go to Item Master
+- Navigate to **Item Master** in the system.  
+
+---
+![ERP Groups Screenshot](/images/item_level.png)
+
+### 2. Create the Parent Item
+1. Select **item_level = 0** from the dropdown.  
+2. Create the first item (parent item).  
+3. Optionally, add a **Display Name** that will appear on the POS button (e.g., `Chicken Pizza`).  
+4. Click **Save**.
+
+---
+
+### 3. Create Child Items / Variations
+1. From the **item_level** dropdown, select **1** for the child item.  
+2. Add a **unique product code** for this variation.  
+3. Repeat the process to add all variations (e.g., Small, Medium, Large), making sure each has the **same master_product_id** as the parent item.  
+4. Click **Save** after each entry.
+
+---
+![ERP Groups Screenshot](/images/Linked_Products.png.png)
+
+### 4. Verify Linked Items
+- Scroll down to the **Linked Products** section.  
+- Here you can confirm that all variations are properly linked to the parent item.  
+- This helps in understanding how items are chained and ensures they will display correctly in the POS.
+
+---
+
+✅ **Tip:** Using **Menu More Units** ensures that the POS interface remains clean, showing a single parent item while giving access to all size or variation options.
