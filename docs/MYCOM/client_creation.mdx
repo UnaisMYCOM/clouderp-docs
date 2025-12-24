@@ -36,7 +36,7 @@ PATH : C:\MYCOM\APPS\TEST\RemServ\files\appconfig\RestPOSCloudManager\settings
     - Modify the **Client ID** in the configuration file.
 9. Once settings are updated, the client can log in and start **master creation**.
 
-SAMPLE V1 - SETTINGS FILE
+## SAMPLE V1 - SETTINGS FILE
 ```json
 {
 	"AppBaseURL": "https://web.mycomsys.com:8804/WEBCLOUD_MAINSRV/api/v1/opm/",
@@ -103,7 +103,28 @@ POST https://web.mycomsys.com:8814/WEBCLOUD_TESTSRV/api/v1/opm/RPCM_Admin_Create
 3. On the **Web2 server**, update the `app_config` settings:
    - Note that the **V2 settings URL** will differ from V1.
    - Copy an existing configuration and modify it with the correct **Client ID**.
-
+## SAMPLE V2 - Settings file
+```json
+{
+    "AppBaseURL": "https://web.mycomsys.com:8814/WEBCLOUD_TESTSRV/api/v1/opm/",
+    "imageURL": "https://devp.mycomsys.com:8807/files/",
+    "common_url": "https://web.mycomsys.com:8804/WEBCLOUD_MAINSRV/common/api/text_to_json",
+     "template_url" : "https://devp.mycomsys.com:8807/files/rpcm/@client_id@/PrintTemplate",
+     "logo_url": "https://devp.mycomsys.com:8807/files/rpcm/@client_id@/logo/logo.jpg",
+    "crud_URL": "https://web.mycomsys.com:8811/crudapi/cloudERP",
+    "report_URL": "https://web.mycomsys.com:8811/api/reports/",
+     "barcode_URL": "https://web.mycomsys.com:8813",
+    "isHsnCodeRequired": false,
+    "hsnCodeLength": 6,
+     "conver_factor_length": 5,
+     "supplierTaxMandatory": false,
+    "ClientId": 81142,
+    "image_dimension": "350 X 160",
+    "Invoice_Footer1": "Should you have any enquires concerning this invoice,please contact Mr Amila 081818181/01010101",
+    "Invoice_Footer2": "please make all checks payable to Mircosol Technologies",
+    "Invoice_Footer3": "Thank you for all your business"
+}
+```
 > After completing these steps, the client is ready to log in and proceed with **master creation** in V2.
 
 ---
