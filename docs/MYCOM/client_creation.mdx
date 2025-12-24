@@ -15,20 +15,84 @@ This guide explains how to create clients in **Cloud ERP**. Depending on the req
 
 ---
 
+
+
 ## Creating a Client in Cloud ERP V1
 
-If the client only needs V1 access:
+If the client only needs **V1 access**, follow these steps:
 
-1. **Login** as `super user` at [V1 URL](https://web.mycomsys.com:8008/).
-2. Navigate to **Client** section.
-3. Enter the required client information and click **Save**.
-4. Assign the **permissions** for the client.
-5. Create a **user** for the client.
-6. Click the dropdown and select **Authentication**.
-7. Add authentication for the client:
-    - Use **Client ID** as the username.
-    - Other details can be fetched from the application.
-8. Login to the **Web2 server**, navigate to **app_config**, and add client settings under the folder **ResposCloud Manager**: 
+---
+
+### 1. Login
+
+- **Go to** [V1 URL](https://web.mycomsys.com:8008/) and **login** as `super user`.
+- On the **bottom right corner**, click the **Admin Settings** button.
+
+---
+
+### 2. Navigate to Client Section
+
+- Go to the **Client** section.
+- Fill in the client details:
+
+| Field           | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| **Client Code** | Can be user input                                                           |
+| **Client ID**   | Auto-generated                                                              |
+| **Client Name** | Mandatory                                                                   |
+| **Client Email**| Not in use? Provide dummy email or name                                     |
+| **Client Phone**| Not in use? Provide dummy number                                            |
+| **Business Type** | Select either `REST` or `Retail`                                         |
+
+- Click **Save** to create the client.
+
+---
+
+### 3. Assign Permissions
+
+- Click the **multi-select dropdown** to view available permissions.
+- Options include:
+  - `All` → full access
+  - Normally: `Product`, `Settings`, `Sales Insight`, `Customer`
+
+---
+
+### 4. Create a User for the Client
+
+- Provide the following user details:
+
+| Field          | Description         |
+|----------------|-------------------|
+| **Username**   | Client’s username |
+| **User Email** | Email address      |
+| **Password**   | Set a secure password |
+| **User Type**  | Set to `Admin`    |
+
+---
+
+### 5. Add Authentication
+
+1. Click the dropdown and select **Authentication**.
+2. Fill in the authentication details:
+
+| Field       | Value                                |
+|------------|--------------------------------------|
+| **User ID** | `mycomerp`                           |
+| **Client ID** | Use the created client ID           |
+| **Password** | Refer to an existing client example |
+
+> Use **Client ID** as the username. Other details can be fetched from the application.
+
+---
+
+### 6. Configure Client Settings on Web2 Server
+
+1. **Login** to the Web2 server.
+2. Navigate to the client configuration folder:
+
+```bash
+PATH: C:\MYCOM\APPS\TEST\RemServ\files\appconfig\RestPOSCloudManager\settings
+
 ```bash
 PATH : C:\MYCOM\APPS\TEST\RemServ\files\appconfig\RestPOSCloudManager\settings
 ```
