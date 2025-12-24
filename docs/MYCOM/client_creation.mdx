@@ -28,11 +28,21 @@ If the client only needs V1 access:
 7. Add authentication for the client:
     - Use **Client ID** as the username.
     - Other details can be fetched from the application.
-8. Login to the **Web2 server**, navigate to **app_config**, and add client settings under the folder **ResposCloud Manager**:
+8. Login to the **Web2 server**, navigate to **app_config**, and add client settings under the folder **ResposCloud Manager**: 
+PATH : C:\MYCOM\APPS\TEST\RemServ\files\appconfig\RestPOSCloudManager\settings
     - Copy an existing client configuration.
     - Modify the **Client ID** in the configuration file.
 9. Once settings are updated, the client can log in and start **master creation**.
 
+SAMPLE V1 - SETTINGS FILE
+```json
+{
+	"AppBaseURL": "https://web.mycomsys.com:8804/WEBCLOUD_MAINSRV/api/v1/opm/",
+	"imageURL": "https://web.mycomsys.com:8804/files/",
+	"common_url" :"https://web.mycomsys.com:8804/WEBCLOUD_MAINSRV/common/api/text_to_json",
+	"ClientId": 81135
+}
+```
 ---
 
 ## Creating a Client in Cloud ERP V2
@@ -44,14 +54,13 @@ If the client requests full ERP (V2) access, follow these steps:
 1. Always create the client in **V1 first** to maintain the `client_id` sequence.
 2. Click **Save** after entering client details.
 3. Open **Inspect** in your browser and capture the **Create Client ID payload**.
-
+![ERP Groups Screenshot](/images/Inspect_client_id.png)
 ### Step 2: Create Client in V2
 
 Use the captured payload to create the same client in V2:
 
 ```http
 POST https://web.mycomsys.com:8814/WEBCLOUD_TESTSRV/api/v1/opm/RPCM_Admin_CreateClient
-Content-Type: application/json
 ```
 ```json
 {
