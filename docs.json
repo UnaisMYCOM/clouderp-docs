@@ -66,6 +66,15 @@
         "icon": "arrow-right"
       }
     ]
+  },{
+    "group": "Mycom Setup",
+    "pages": [
+      {
+        "title": "Client Creation",
+        "href": "/MYCOM/client",
+        "icon": "arrow-right"
+      }
+    ]
   }
 ]
 }

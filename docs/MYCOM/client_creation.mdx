@@ -1,0 +1,104 @@
+# Cloud ERP Client Creation Guide
+
+This guide explains how to create clients in **Cloud ERP**. Depending on the request, you may be working with **Cloud ERP V1** (OPM purpose) or **Cloud ERP V2** (full ERP features).  
+
+---
+
+## Cloud ERP Versions
+
+| Version       | Purpose                             | URL                                  |
+|---------------|-------------------------------------|--------------------------------------|
+| **V1**        | OPM purpose, client creation        | [https://web.mycomsys.com:8008/](https://web.mycomsys.com:8008/) |
+| **V2**        | Full ERP features                   | [https://mycomerp.com/crudv2](https://mycomerp.com/crudv2) |
+
+> **Note:** Credentials for V1 and V2 are shared privately.
+
+---
+
+## Creating a Client in Cloud ERP V1
+
+If the client only needs V1 access:
+
+1. **Login** as `super user` at [V1 URL](https://web.mycomsys.com:8008/).
+2. Navigate to **Client** section.
+3. Enter the required client information and click **Save**.
+4. Assign the **permissions** for the client.
+5. Create a **user** for the client.
+6. Click the dropdown and select **Authentication**.
+7. Add authentication for the client:
+    - Use **Client ID** as the username.
+    - Other details can be fetched from the application.
+8. Login to the **Web2 server**, navigate to **app_config**, and add client settings under the folder **ResposCloud Manager**:
+    - Copy an existing client configuration.
+    - Modify the **Client ID** in the configuration file.
+9. Once settings are updated, the client can log in and start **master creation**.
+
+---
+
+## Creating a Client in Cloud ERP V2
+
+If the client requests full ERP (V2) access, follow these steps:
+
+### Step 1: Create Client in V1
+
+1. Always create the client in **V1 first** to maintain the `client_id` sequence.
+2. Click **Save** after entering client details.
+3. Open **Inspect** in your browser and capture the **Create Client ID payload**.
+
+### Step 2: Create Client in V2
+
+Use the captured payload to create the same client in V2:
+
+```http
+POST https://web.mycomsys.com:8814/WEBCLOUD_TESTSRV/api/v1/opm/RPCM_Admin_CreateClient
+Content-Type: application/json
+
+{
+  "DATA": [
+    {
+      "id": "",
+      "client_id": "81156",
+      "client_code": "81156",
+      "client_name": "Shenals Family Restaurant",
+      "address": "SRI LANKA",
+      "email": "company@gmail.com",
+      "loc_id": "ALL",
+      "profile_image": "",
+      "business_type": "REST",
+      "phone": "1234",
+      "super": "1",
+      "active": "1",
+      "Deleted": "0",
+      "approve": "1",
+      "skip_auth": "Y",
+      "client_desc": "",
+      "client_desc2": "",
+      "created_date": "2025-12-20",
+      "created_user": "M-ADMIN",
+      "modified_date": "2025-12-20",
+      "modified_user": "M-ADMIN"
+    }
+  ]
+}
+
+
+## Step 3: Configure V2 Settings
+
+1. **Login** to the **V2 portal** using the same super user credentials.
+
+2. **Create users**, assign **permissions**, and add **authentication** as described in the **V1 workflow**.
+
+3. On the **Web2 server**, update the `app_config` settings:
+   - Note that the **V2 settings URL** will differ from V1.
+   - Copy an existing configuration and modify it with the correct **Client ID**.
+
+> After completing these steps, the client is ready to log in and proceed with **master creation** in V2.
+
+---
+
+## Notes & Tips
+
+- Always create the client in **V1 first** to maintain `client_id` sequence.  
+- Use the browser's **Inspect tool** to capture payloads for API-based client creation.  
+- Ensure **permissions and authentication** are configured correctly before client login.  
+- Settings in the **Web2 server** differ between V1 and V2 — always verify the URLs before saving.
