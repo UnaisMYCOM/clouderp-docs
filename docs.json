@@ -64,6 +64,11 @@
         "title": "More Units",
         "href": "/product/More_Units",
         "icon": "arrow-right"
+      },
+      {
+        "title": "Recipe Creation",
+        "href": "/product/Recipe_Creation",
+        "icon": "arrow-right"
       }
     ]
   },{

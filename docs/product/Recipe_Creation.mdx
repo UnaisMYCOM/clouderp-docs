@@ -1,0 +1,216 @@
+# Recipe Creation
+
+The **Recipe Creation** feature allows you to define the raw materials required to prepare or produce a menu item.
+This helps the system automatically reduce ingredient stock during sales and calculate item cost based on inventory transactions.
+
+---
+
+# Example Scenario
+
+## Menu Item
+
+Before creating a recipe, you must first create the **Menu Item** in the Item Master.
+
+Example:
+
+| Menu Item |
+| --------- |
+| Pizza     |
+
+---
+
+# Create Material Items
+
+After creating the menu item, create all raw material items required for preparation.
+
+Example materials for Pizza:
+
+| Material Item |
+| ------------- |
+| Flour         |
+| Cheese        |
+| Toppings      |
+
+---
+
+# Understanding UOM and Conversion Factor
+
+Sometimes materials are purchased in one unit but consumed in another unit.
+
+Example:
+
+* Flour is purchased in **KG**
+* Recipe consumption is in **Grams (G)**
+
+In this case, a **Conversion Factor** is required.
+
+---
+
+## Example — Flour
+
+| Field             | Value |
+| ----------------- | ----- |
+| Purchase UOM      | KG    |
+| Consumption UOM   | G     |
+| Conversion Factor | 1000  |
+| Recipe Usage      | 300 G |
+
+### Explanation
+
+* `1 KG = 1000 G`
+* Therefore, the conversion factor is `1000`
+* If one Pizza requires `300 G`, enter:
+
+  * Consumption UOM = `G`
+  * Quantity = `300`
+
+---
+
+## Example — Cheese
+
+| Field             | Value |
+| ----------------- | ----- |
+| Purchase UOM      | KG    |
+| Consumption UOM   | G     |
+| Conversion Factor | 1000  |
+| Recipe Usage      | 150 G |
+
+### Explanation
+
+* Cheese is purchased in kilograms but consumed in grams.
+* `1 KG = 1000 G`
+* Enter:
+
+  * Consumption UOM = `G`
+  * Quantity = `150`
+
+---
+
+## Example — Toppings
+
+| Field             | Value |
+| ----------------- | ----- |
+| Purchase UOM      | BOX   |
+| Consumption UOM   | PCS   |
+| Conversion Factor | 24    |
+| Recipe Usage      | 6 PCS |
+
+### Explanation
+
+* One box contains 24 pieces.
+* The recipe uses 6 pieces per Pizza.
+
+---
+
+# Steps to Create a Recipe
+
+## 1. Open Recipe Management
+
+* Navigate to **Recipe Management** from the ERP menu.
+
+---
+
+![Recipe Management Screenshot](/images/recipe_management.png)
+
+---
+
+## 2. Select the Menu Item
+
+1. Select the menu item to produce.
+2. Example:
+
+   * Pizza
+
+---
+
+![Menu Item Selection Screenshot](/images/menu_item_selection.png)
+
+---
+
+## 3. Add Material Items
+
+1. Add all required material items.
+2. Enter:
+
+   * Material Item
+   * UOM
+   * Conversion Factor
+   * Required Quantity
+
+---
+
+![Recipe Materials Screenshot](/images/recipe_materials.png)
+
+---
+
+## 4. Save the Recipe
+
+* Click **Save** after adding all materials.
+
+---
+
+![Recipe Save Screenshot](/images/recipe_save.png)
+
+---
+
+# Cost Calculation Logic
+
+## Initial Cost
+
+Initially, item costing is taken from:
+
+* `initial_cost` in Product Master
+
+This cost is used in reports such as:
+
+* Stock Balance Report
+* Inventory Valuation
+
+---
+
+# Cost Update After GRN
+
+After a **GRN (Goods Received Note)** is processed:
+
+* The system updates the product cost using:
+
+  * `last_net_cost`
+
+This means future inventory valuation and recipe costing will use the latest purchase cost from GRN transactions.
+
+---
+
+# Cost Flow Summary
+
+| Stage      | Cost Source   |
+| ---------- | ------------- |
+| Before GRN | initial_cost  |
+| After GRN  | last_net_cost |
+
+---
+
+# Stock Balance Report Behavior
+
+## Before GRN
+
+The stock balance report shows cost using:
+
+* `initial_cost`
+
+## After GRN
+
+The stock balance report automatically uses:
+
+* `last_net_cost`
+
+This ensures inventory valuation reflects the latest purchase price.
+
+---
+
+# Important Notes
+
+> Always ensure the correct UOM and Conversion Factor are configured before creating recipes.
+
+> Incorrect conversion factors may cause inaccurate stock deduction and costing.
+
+> Recipes are used during sales processing to automatically reduce material stock.
