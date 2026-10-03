@@ -1,50 +1,198 @@
 # Customer
 
-The **Customer** tab is where you create and manage customers in Cloud ERP.
-
-Customers created here can be used for both **wholesale** and **retail** invoices.
+The **Customer** tab is where you create and manage the customers of your business. Customers created here can be used for both **wholesale** and **retail** invoices.
 
 ---
 
 ## Customer Types
 
+A customer is either a **normal** customer or a **credit** customer. There are **two types of credit customer**: pre-paid and post-paid.
+
 | Type | Description |
 | ---- | ----------- |
-| **Normal** | Standard customer, no credit account |
-| **Credit – Prepaid** | Credit customer who pays in advance |
-| **Credit – Postpaid** | Credit customer who is billed and pays later |
+| **Normal** | Standard customer with no credit account |
+| **Credit - Pre-paid** | Credit customer who pays in advance. They have a balance that is loaded first and used up as they buy. |
+| **Credit - Post-paid** | Credit customer who buys now and pays later, up to an agreed credit limit |
 
 ---
 
-## Steps to Create a Customer
+## Customer Master
 
-### 1. Open Customer
+Go to **Sales** → **Customer** → **Customer Master**.
 
-1. Go to **Customer** in the main menu.
-2. Click **New**.
+<Image src="/images/customer_list.png" alt="Customer Master" zoom={true} />
 
-{/* TODO: screenshot */}
+The **All Customers** tab shows every customer in the system. The **Group Details** tab is next to it.
 
-### 2. Fill in the details
+### Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Create Customer** | Add a single customer. See [Create a Customer](#create-a-customer). |
+| **Upload Customer List** | Add many customers at once from a CSV file. See [Upload Customer List](#upload-customer-list). |
+| **Upload Customer Payment** | Reload the balances of pre-paid customers from a CSV file. See [Upload Customer Payment](#upload-customer-payment). |
+
+### Search and export
+
+| Control | Description |
+| ------- | ----------- |
+| **Select Column** | Choose the column you want to search in |
+| **Search by** | Type the value to search for in the selected column |
+| **Export to Excel** | Download the customer list as an Excel file |
+
+Use **Rows per page** and the page controls at the bottom to move through the list.
+
+### Customer list columns
+
+| Column | Description |
+| ------ | ----------- |
+| **User Id** | The customer code |
+| **Name** | The customer name |
+| **Email** | The customer's email address |
+| **Mobile** | The customer's mobile number |
+| **Credit Limit** | The credit limit of the customer |
+| **Current Balance** | The customer's current balance |
+| **Status** | Whether the customer is valid, for example `VALID` |
+| **Action** | Edit, delete or view the customer |
+
+| Icon | Description |
+| ---- | ----------- |
+| **Pencil** | Edit the customer |
+| **Bin** | Delete the customer |
+| **Eye** | View the customer's details |
+
+---
+
+## Create a Customer
+
+Use this to add one customer at a time.
+
+1. Click **Create Customer**.
+2. Fill in the **General Information**.
+3. For a credit customer, switch on **Credit Customer** and fill in the **Credit details**.
+4. Click **Save**.
+
+<Image src="/images/customer_create.png" alt="Create Customer" zoom={true} />
+
+### Switches
+
+| Switch | Description |
+| ------ | ----------- |
+| **Credit Customer** | Switch on for a credit customer (pre-paid or post-paid). Leave off for a normal customer. |
+| **Active** | Switch on for a customer who is active and can be billed |
+
+### General Information
+
+Fields marked with **\*** are mandatory.
 
 | Field | Description |
 | ----- | ----------- |
-| {/* TODO */} | {/* TODO */} |
+| **Location Code \*** | The location the customer belongs to. Filled in automatically and cannot be edited. |
+| **Customer Id \*** | A unique code for the customer |
+| **First Name \*** | The customer's name |
+| **Email \*** | The customer's email address |
+| **Contact Number \*** | The customer's phone number |
+| **Payment Type** | The customer's usual payment type |
+| **Group Type** | The customer group the customer belongs to |
+| **TRN Number** | The customer's Tax Registration Number, if applicable |
+| **Account Code** | The account code linked to the customer. Click the **search** button to select one. |
+| **Price Group** | The price list used when billing this customer. Click the **search** button to select one. |
+| **Address** | The customer's address |
+| **Area** | The area the customer is in. Select it from the list. |
 
-### 3. Select the customer type
+### Credit details
 
-* Choose **Normal**, **Credit (Prepaid)** or **Credit (Postpaid)**.
+| Field | Description |
+| ----- | ----------- |
+| **Customer Type** | The type of credit customer: **Pre-paid** or **Post-paid** |
+| **Credit Limit** | The maximum credit given to the customer |
+| **Available Credit** | The credit the customer still has available |
+| **Reference** | Any reference for the customer's credit account |
 
-{/* TODO: explain credit limit / balance fields if applicable */}
+Click **Clear** to empty the form, or **Back** to return to the list.
 
-### 4. Save
+---
 
-* Click **Save**.
+## Upload Customer List
+
+Use this to create many customers in one go, instead of entering them one by one.
+
+<Image src="/images/customer_bulk_upload.png" alt="Import customer master from CSV" zoom={true} />
+
+1. Click **Upload Customer List**.
+2. Click **Download Template** and fill it in. Starting from the template makes sure every column lands in the right place.
+3. **Drag and drop** your CSV file onto the page, or click **browse from your computer**.
+4. Review the rows. The system validates them before anything is saved, and flags any rows with problems so you can fix them on screen.
+5. Click **Import File**.
+
+| Requirement | Detail |
+| ----------- | ------ |
+| **File type** | `.csv` only |
+| **Separator** | Comma separated |
+| **Size** | Up to 10 MB per file |
+
+### CSV columns
+
+| Column | Description |
+| ------ | ----------- |
+| `user_id` | The customer code |
+| `name` | The customer name |
+| `email` | The customer's email address |
+| `payment_type` | The customer's payment type |
+| `customer_type` | The customer type, for example normal, pre-paid or post-paid |
+| `c_credit_limit` | The credit limit |
+| `current_balance` | The current balance |
+
+---
+
+## Upload Customer Payment
+
+Use this to load or reload the balances of **pre-paid credit customers**.
+
+A pre-paid customer has a balance that is topped up on a regular basis. For example, a customer who has a balance of **1,000** every month: as they buy, the balance goes down, and at the next reload it goes back to **1,000**.
+
+### Ways to reload
+
+| Method | Description |
+| ------ | ----------- |
+| **Manual upload** | Click **Upload Customer Payment** and upload a CSV file |
+| **Scheduler** | A scheduler runs automatically and reloads the balances without any upload |
+
+The scheduler's frequency can be changed to suit the customer. Most customers use a **month-end reload**.
+
+### CSV columns
+
+| Column | Description |
+| ------ | ----------- |
+| `paid_amount` | The amount to load into the customer's balance |
+| `doc_date` | The date of the payment, in `dd/mm/yyyy` format |
+| `customer_code` | The customer's code |
+
+Example:
+
+```csv
+paid_amount,doc_date,customer_code
+20,30/04/2025,1002484
+```
+
+### Before you upload
+
+> The customers **must already exist** before you upload their payments. Create them first, or add them with [Upload Customer List](#upload-customer-list).
+
+### What happens when you upload
+
+1. The system **validates** the file, for example it checks that each customer code exists.
+2. Once validation passes, you can complete the upload and **see the effect** on the customers' balances.
+3. If any error occurs while the data is being saved, the system **displays the error** so you can correct it.
 
 ---
 
 ## Important Notes
 
-> The same customer can be used on wholesale and retail invoices.
+> The same customer can be used on both wholesale and retail invoices.
 
-> {/* TODO: add notes on how prepaid vs postpaid affects invoicing and payments */}
+> A customer must be selected on every sales document, so create the customer before you start billing.
+
+> Pre-paid balances can be reloaded by a CSV upload or by the scheduler. Month end is the most common choice.
+
+> Customers must exist before you upload their payments.
