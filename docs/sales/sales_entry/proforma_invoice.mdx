@@ -1,31 +1,105 @@
 # Proforma Invoice
 
-A **Proforma Invoice** is a preliminary invoice sent to a customer before the final sale is confirmed.
+A **Proforma Invoice** is a preliminary invoice that you give a customer before the final sale. It shows the items and amounts the customer is expected to pay, and it can later be converted into a [Sales Invoice](/sales/sales_entry/sales_invoice).
 
 ---
 
-## Steps
+## Document Flow
 
-{/* TODO: add each step with its screenshot, e.g. ![Proforma Invoice](/images/proforma_invoice_1.png) */}
+```text
+Proforma Invoice  →  Sales Invoice  →  Sales Return
+```
 
-### 1. Open Proforma Invoice
+A Proforma Invoice can also be created from a [Quotation](/sales/sales_entry/quotation):
+
+```text
+Quotation  →  Proforma Invoice  →  Sales Invoice
+```
+
+---
+
+## Open the Proforma Invoice Screen
 
 1. Go to **Sales** → **Sales Entry** → **Proforma Invoice**.
+2. Click **Create** to enter a new proforma invoice, or open an existing one to edit it.
 
-{/* TODO: screenshot + explanation */}
+![Proforma Invoice](/images/proforma_invoice_edit.png)
 
-### 2. Enter the details
+The top of a saved document shows its number (for example `PRI-2026-10-000001`) and who created and last updated it.
+
+---
+
+## Header Section
+
+Fields marked with **\*** are mandatory.
 
 | Field | Description |
 | ----- | ----------- |
-| {/* TODO */} | {/* TODO */} |
+| **Proforma Invoice Entry Date \*** | Date of the proforma invoice. Cannot be edited after saving. |
+| **Location \*** | The location (branch) issuing the document. Cannot be edited after saving. |
+| **Sub Location Code \*** | The sub location, for example `001 - Sales`. Cannot be edited after saving. |
+| **Customer Code \*** | The customer. Cannot be edited after saving. |
+| **Customer Name** | Filled in automatically from the customer. Cannot be edited. |
+| **Document Reference \*** | A reference for the document, such as the customer's PO number. Mandatory. |
+| **Remarks** | Any free-text notes. |
 
-### 3. Save
+The totals bar shows **Total Amount**, **Total Tax Amount** and **Total Net Amount**.
 
-* Click **Save** to complete the entry.
+---
+
+## Adding Items
+
+Items are added in the same way as on a Sales Invoice, using **Upload Products** (CSV file), **Quick Add Items** or **Add** (normal add). See [Adding Items to the Invoice](/sales/sales_entry/sales_invoice#adding-items-to-the-invoice).
+
+| Column | Description |
+| ------ | ----------- |
+| **Line Number** | Line number of the item |
+| **Code** | Product code |
+| **Description** | Name of the product |
+| **Pack Id** | The pack or unit the item is sold in |
+| **Quantity** | Quantity |
+| **Unit Price** | Price per unit |
+| **Total Amount** | Amount before tax |
+| **Tax Amount** | Tax for the line |
+| **Net Amount** | Final amount for the line |
+
+Each line has a **pencil icon** to edit it and a **delete icon** to remove it.
+
+---
+
+## Convert to Sales Invoice
+
+When the customer confirms, click **Convert to Sales Invoice** to turn the proforma into a Sales Invoice. Stock is affected once the Sales Invoice is created.
+
+---
+
+## Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Convert to Sales Invoice** | Converts the proforma into a Sales Invoice |
+| **Upload Products** | Add items from a CSV file |
+| **Quick Add Items** | Add items quickly as rows |
+| **Cancel** | Discard changes and go back |
+| **Update** | Save the changes |
+
+---
+
+## Printing
+
+Printing works the same way as on a Sales Invoice. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing).
+
+| Button | Description |
+| ------ | ----------- |
+| **Print** | Print the proforma invoice |
+| **Print Barcode** | Print barcodes for the items |
+
+> Print templates are **fully customizable** to match each business and each customer's design.
 
 ---
 
 ## Important Notes
 
-> {/* TODO: add rules and gotchas for Proforma Invoice */}
+> Document Reference is mandatory on a Proforma Invoice.
+
+> The chain is **Proforma Invoice → Sales Invoice → Sales Return**.

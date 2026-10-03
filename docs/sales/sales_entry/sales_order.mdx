@@ -1,35 +1,114 @@
 # Sales Order
 
-A **Sales Order** records an order placed by a customer before it is invoiced.
+A **Sales Order** records an order placed by a customer **before it is invoiced**. It is used to confirm what the customer wants, at what price, and for which delivery date.
+
+> A Sales Order **does not affect stock**. Stock is affected only when the order is converted to a [Sales Invoice](/sales/sales_entry/sales_invoice).
 
 ---
 
-## Overview
+## Document Flow
 
-{/* TODO: explain how Sales Order is used in your workflow (e.g. wholesale orders, van sales orders) and whether it converts into a Sales Invoice */}
+```text
+Sales Order  →  Sales Invoice  →  Sales Return
+```
 
-## Steps
+| Step | Effect on stock |
+| ---- | --------------- |
+| **Sales Order** | No effect |
+| **Sales Invoice** (converted from the order) | Stock is reduced |
+| **Sales Return** | Returned stock is added back |
 
-{/* TODO: add each step with its screenshot, e.g. ![Sales Order](/images/sales_order_1.png) */}
+---
 
-### 1. Open Sales Order
+## Open the Sales Order Screen
 
 1. Go to **Sales** → **Sales Entry** → **Sales Order**.
+2. Click **Create** to enter a new order, or open an existing order to edit it.
 
-{/* TODO: screenshot + explanation */}
+![Sales Order](/images/sales_order_edit.png)
 
-### 2. Enter the details
+The top of a saved order shows the order number (for example `SO-001100019`) and who created and last updated it.
 
-| Field | Description |
-| ----- | ----------- |
-| {/* TODO */} | {/* TODO */} |
+---
 
-### 3. Save
+## Header Section
 
-* Click **Save** to complete the entry.
+The header fields are the same as the [Sales Invoice header](/sales/sales_entry/sales_invoice#header-section), with these differences:
+
+* **Sales Type** is set to **Sales Order**.
+* **Delivery Date** is the date the customer expects the goods.
+* The totals bar shows **Total Amount**, **Total Tax Amount**, **Total Discount Amount** and **Total Net Amount**. There is no Payment tab and no Outstanding Amount, because nothing is billed or paid at this stage.
+
+### After the order is saved
+
+Some fields are locked and cannot be changed.
+
+| Locked (non editable) | Still editable |
+| --------------------- | -------------- |
+| Entry Date, Sales Type, Location, Sub Location Code, Division Code, Document Reference, Customer Code, Customer Name, Tax Type | Delivery Date, TRN Number, Salesmen, Payment Type, Price Group, Discount Type, Currency, Discount %, Remarks |
+
+---
+
+## Adding Items to the Order
+
+Items are added in exactly the same way as on a Sales Invoice. You can use **Upload Products** (CSV file), **Quick Add Items** or **Add** (normal add).
+
+For the full steps, see [Adding Items to the Invoice](/sales/sales_entry/sales_invoice#adding-items-to-the-invoice).
+
+| Column | Description |
+| ------ | ----------- |
+| **Line Number** | Line number of the item |
+| **Product Code** | Code of the product |
+| **Description** | Name of the product |
+| **UOM Code** | Unit of measure, for example `NOS` |
+| **Package Quantity** | Quantity in packages |
+| **Quantity** | Quantity ordered |
+| **Unit Price** | Selling price per unit |
+| **Gross Amount** | Amount before tax and discount |
+| **Tax Amount** | Tax for the line |
+| **Discount %** | Discount percentage for the line |
+| **Discount Amount** | Discount value for the line |
+| **Net Amount** | Final amount for the line |
+
+On a saved order, each line has a **pencil icon** to edit it and a **delete icon** to remove it.
+
+---
+
+## Convert to Sales Invoice
+
+When the customer is ready to be billed, click **Convert to Sales Invoice**. The order becomes a Sales Invoice, and **from this point the stock is affected**.
+
+---
+
+## Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Convert to Sales Invoice** | Converts the order into a Sales Invoice |
+| **Upload Products** | Add items from a CSV file |
+| **Quick Add Items** | Add items quickly as rows |
+| **Cancel** | Discard changes and go back |
+| **Update** | Save the changes to the order |
+
+---
+
+## Printing
+
+Printing works the same way as on a Sales Invoice. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing).
+
+| Button | Description |
+| ------ | ----------- |
+| **Print** | Print the sales order |
+| **Print Delivery Note** | Print a delivery note |
+| **Print Tax Invoice** | Print the tax invoice |
+| **Print Barcode** | Print barcodes for the items |
+
+> Print templates are **fully customizable** to match each business and each customer's design.
 
 ---
 
 ## Important Notes
 
-> {/* TODO: add rules and gotchas for Sales Order */}
+> A Sales Order never changes stock. Convert it to a Sales Invoice to affect stock.
+
+> The full chain is **Sales Order → Sales Invoice → Sales Return**.

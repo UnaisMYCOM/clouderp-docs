@@ -19,4 +19,23 @@
 
 ---
 
+## Document Flow
+
+Sales documents can be converted from one to the next. Stock is affected only from the **Sales Invoice** onwards.
+
+```text
+Quotation        →  Proforma Invoice  →  Sales Invoice  →  Sales Return
+Quotation        →  Sales Invoice
+Proforma Invoice →  Sales Invoice     →  Sales Return
+Sales Order      →  Sales Invoice     →  Sales Return
+```
+
+| Document | Effect on stock |
+| -------- | --------------- |
+| Sales Order | No effect |
+| Sales Invoice | Stock is reduced |
+| Sales Return | Returned stock is added back |
+
+---
+
 {/* TODO: add a screenshot of the Sales Entry menu: ![Sales Entry](/images/sales_entry_menu.png) */}

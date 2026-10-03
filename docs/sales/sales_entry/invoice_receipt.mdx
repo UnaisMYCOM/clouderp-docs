@@ -1,31 +1,112 @@
 # Invoice Receipt
 
-Use **Invoice Receipt** to record payments received from customers against their invoices.
+Use **Invoice Receipt** to record a payment received from a customer and allocate it against one or more of their invoices. The customer can pay one invoice, several invoices, or part of an invoice.
+
+> You can also reach this screen from a Sales Invoice, using **Post to Invoice Receipt** or **Convert to Invoice Receipt**. See [Sales Invoice](/sales/sales_entry/sales_invoice#payment-tab).
 
 ---
 
-## Steps
-
-{/* TODO: add each step with its screenshot, e.g. ![Invoice Receipt](/images/invoice_receipt_1.png) */}
-
-### 1. Open Invoice Receipt
+## Create an Invoice Receipt
 
 1. Go to **Sales** → **Sales Entry** → **Invoice Receipt**.
+2. Click **Create**.
 
-{/* TODO: screenshot + explanation */}
+![Invoice Receipt](/images/invoice_receipt_create.png)
 
-### 2. Enter the details
+### Step 1: Select the customer and enter the receipt details
+
+Fields marked with **\*** are mandatory.
 
 | Field | Description |
 | ----- | ----------- |
-| {/* TODO */} | {/* TODO */} |
+| **Receipt Date \*** | The date the payment was received. Defaults to today's date. |
+| **From Location \*** | The location (branch) receiving the payment. |
+| **Customer Code \*** | The customer who is paying. Type the code or click the **search** button to select from the Customer list. |
+| **Customer Name \*** | Filled in automatically after the customer is selected. Cannot be edited. |
+| **Payment Type \*** | How the customer is paying: **Cash**, **Credit**, **Bank Transfer** or **Cheque**. |
+| **Check No** | The cheque number. Available only when the payment type is **Cheque**. |
+| **Bank** | The bank details for the payment. Not used for Cash. |
+| **Remarks** | Any free-text notes about the receipt. |
 
-### 3. Save
+> Select the **customer first**. The invoices you can pay are listed based on the customer you choose.
 
-* Click **Save** to complete the entry.
+### Summary bar
+
+The bar below the header shows the receipt totals and updates as you allocate payments.
+
+| Total | Description |
+| ----- | ----------- |
+| **Invoice Amount** | Total amount of the invoices selected in this receipt |
+| **Paid Amount** | Total amount being paid in this receipt |
+| **Balance Amount** | Amount still unpaid on the selected invoices after this receipt |
+| **Outstanding Amount** | The customer's outstanding balance, shown live |
+
+---
+
+### Step 2: Select the invoices and enter the amount
+
+1. Click **Add** in the invoice table. The **Invoice Receipt** window opens with the customer's invoices.
+2. Tick the **checkbox** of each invoice the customer is paying. Tick the box in the header row to select all.
+3. In the **Additional Payment** box of each selected invoice, type the amount being paid against it. It can be the full balance or a part of it.
+4. Check the totals at the bottom of the window, then click **Save Allocation**.
+
+![Allocate payment against invoices](/images/invoice_receipt_allocate.png)
+
+| Column | Description |
+| ------ | ----------- |
+| **Doc ID** | The document number |
+| **Invoice No** | The invoice number |
+| **Doc Type** | The type of document. **SI** is a Sales Invoice and **SR** is a Sales Return. |
+| **Customer Name** | The customer on the invoice |
+| **Invoice Amount** | The total amount of the invoice |
+| **Already Paid** | The amount already paid against the invoice in earlier receipts |
+| **Additional Payment** | The amount you are paying now. Type it here. |
+| **Remaining Balance** | The amount still unpaid on the invoice |
+
+At the bottom of the window:
+
+| Item | Description |
+| ---- | ----------- |
+| **Selected** | How many invoices are selected |
+| **Total Paid Amount** | The total of all Additional Payment amounts |
+| **Outstanding Amount** | The customer's outstanding balance |
+
+> A **Sales Return (SR)** is listed with a **negative** amount. Its payment box is greyed out, so no payment can be entered against it.
+
+---
+
+### Step 3: Save
+
+1. After **Save Allocation**, the selected invoices appear in the table on the receipt screen.
+2. Check the details, then click **Save** to complete the receipt.
+3. Click **Cancel** to discard the receipt.
+
+| Column | Description |
+| ------ | ----------- |
+| **Invoice No** | The invoice the payment is allocated to |
+| **Doc Type** | The type of document, SI or SR |
+| **Invoice Amount** | The invoice total |
+| **Paid Amount** | The amount paid in this receipt |
+| **Balance Amount** | The amount still unpaid on the invoice |
+
+---
+
+## Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Search** | Select a customer from the Customer list |
+| **Add** | Open the window to select invoices and enter payments |
+| **Save Allocation** | Confirm the payments entered in the window |
+| **Save** | Save the invoice receipt |
+| **Cancel** | Discard the receipt and go back |
 
 ---
 
 ## Important Notes
 
-> {/* TODO: add rules and gotchas for Invoice Receipt */}
+> Select the customer first. Only that customer's invoices are available for payment.
+
+> One receipt can settle many invoices. Enter the amount for each invoice in **Additional Payment**.
+
+> A customer can pay an invoice in parts. **Already Paid** and **Remaining Balance** keep track of what is left.

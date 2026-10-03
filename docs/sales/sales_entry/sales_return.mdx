@@ -1,31 +1,136 @@
 # Sales Return
 
-Use **Sales Return** to record goods returned by a customer.
+Use **Sales Return** to record goods that a customer sends back. A return can be made against an existing sales invoice, or entered directly without one.
 
 ---
 
-## Steps
+## Document Flow
 
-{/* TODO: add each step with its screenshot, e.g. ![Sales Return](/images/sales_return_1.png) */}
+```text
+Sales Order       →  Sales Invoice  →  Sales Return
+Proforma Invoice  →  Sales Invoice  →  Sales Return
+```
 
-### 1. Open Sales Return
+A Sales Return is the last step of the sales flow. It follows a [Sales Invoice](/sales/sales_entry/sales_invoice).
+
+---
+
+## Two Ways to Create a Return
+
+| Method | Use when |
+| ------ | -------- |
+| [Return against a Sales Invoice](#return-against-a-sales-invoice) | The goods were sold on an existing invoice and you want the return linked to it |
+| [Direct Return](#direct-return) | You want to record a return without selecting an invoice |
+
+---
+
+## Return against a Sales Invoice
 
 1. Go to **Sales** → **Sales Entry** → **Sales Return**.
+2. Click **Create**.
+3. Click the **search** button next to the entry date. The **Select a Sales Invoice** window opens.
+4. Find the invoice. Choose a **Search Column** (for example *Sales Invoice Entry*) and type in the **Search** box.
+5. Select the invoice with the radio button on its row and click **Select**.
+6. The customer details are filled in from the invoice. Choose the items and quantities being returned.
+7. Click **Save**.
 
-{/* TODO: screenshot + explanation */}
+![Select a Sales Invoice](/images/sales_return_select_invoice.png)
 
-### 2. Enter the details
+The **Select a Sales Invoice** window shows these columns to help you pick the right invoice:
+
+| Column | Description |
+| ------ | ----------- |
+| **Sales Invoice Entry** | The sales invoice number |
+| **Sales Invoice Entry Date** | Date of the invoice |
+| **Sales Type** | Type of sale, for example `SI` for Sales Invoice |
+| **Location**, **Sub Location Code**, **Division Code** | Where the sale was made |
+| **Customer Code**, **Customer Name** | The customer on the invoice |
+| **Document Reference** | The reference on the invoice. For an invoice converted from a Sales Order, this is the order number. |
+| **Total Amount**, **Total Tax Amount**, **Total Net Amount** | Invoice totals |
+| **Posted** | Whether the invoice has been posted (`Y` or `N`) |
+| **Closed** | Whether the invoice is closed (`Y` or `N`) |
+| **Created By** | The user who created the invoice |
+
+Once saved, the selected invoice number appears in the **Document Reference** field of the return, so the two documents stay linked.
+
+---
+
+## Direct Return
+
+To record a return without an invoice, do not select a sales invoice. Choose the customer and add the returned items yourself.
+
+---
+
+## Header Section
+
+![Sales Return](/images/sales_return_edit.png)
+
+The top of a saved return shows its number (for example `SR-2026-10-000001`) and who created and last updated it. Fields marked with **\*** are mandatory.
 
 | Field | Description |
 | ----- | ----------- |
-| {/* TODO */} | {/* TODO */} |
+| **Sales Return Entry Date \*** | Date of the return. Cannot be edited after saving. |
+| **Location \*** | The location (branch) receiving the return. Cannot be edited after saving. |
+| **Sub Location Code \*** | The sub location, for example `001 - Sales`. Cannot be edited after saving. |
+| **Division Code \*** | The division, for example `001 - Default`. Cannot be edited after saving. |
+| **Customer Code \*** | The customer returning the goods. Cannot be edited after saving. |
+| **Customer Name** | Filled in automatically from the customer. Cannot be edited. |
+| **Payment Type \*** | The payment type for the return. Select it from the list. |
+| **Document Reference** | The sales invoice the return is made against, for example `SI-2026-10-000014`. Cannot be edited. |
+| **Tax Type \*** | The tax treatment, for example `International`. Cannot be edited after saving. |
+| **Remarks** | Any free-text notes, for example the reason for the return. |
 
-### 3. Save
+The totals bar shows **Total Amount**, **Total Tax Amount** and **Total Net Amount** of the returned items.
 
-* Click **Save** to complete the entry.
+---
+
+## Adding Items
+
+Items are added in the same way as on a Sales Invoice, using **Upload Products** (CSV file), **Quick Add Items** or **Add** (normal add). See [Adding Items to the Invoice](/sales/sales_entry/sales_invoice#adding-items-to-the-invoice).
+
+| Column | Description |
+| ------ | ----------- |
+| **Line Number** | Line number of the item |
+| **Code** | Product code |
+| **Description** | Name of the product |
+| **UOM Code** | Unit of measure, for example `NOS` |
+| **Quantity** | Quantity being returned |
+| **Unit Price** | Price per unit |
+| **Total Amount** | Amount before tax |
+| **Tax Amount** | Tax for the line |
+| **Net Amount** | Final amount for the line |
+
+Each line has a **pencil icon** to edit it and a **delete icon** to remove it.
+
+---
+
+## Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Upload Products** | Add items from a CSV file |
+| **Quick Add Items** | Add items quickly as rows |
+| **Convert to Receivable Invoice** | Creates an entry in the **Accounts** module for this return |
+| **Cancel** | Discard changes and go back |
+| **Update** | Save the changes |
+
+---
+
+## Printing
+
+Printing works the same way as on a Sales Invoice. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing).
+
+| Button | Description |
+| ------ | ----------- |
+| **Print** | Print the sales return |
+| **Print Barcode** | Print barcodes for the items |
+
+> Print templates are **fully customizable** to match each business and each customer's design.
 
 ---
 
 ## Important Notes
 
-> {/* TODO: add rules and gotchas for Sales Return */}
+> A return can be linked to a sales invoice or entered directly.
+
+> A return made against an invoice is counted in that invoice's **Outstanding Amount**: `Total Sales Invoice - Total Sales Return - Total Paid Amount`.

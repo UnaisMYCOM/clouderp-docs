@@ -1,31 +1,102 @@
 # Quotation
 
-Use **Quotation** to give a customer a price offer before an order or invoice is created.
+A **Quotation** is a price offer you give a customer before an order or invoice is created. Once the customer accepts, you can convert it into a Proforma Invoice, or go straight to a Sales Invoice.
 
 ---
 
-## Steps
+## Document Flow
 
-{/* TODO: add each step with its screenshot, e.g. ![Quotation](/images/quotation_1.png) */}
+A Quotation can be converted in two ways:
 
-### 1. Open Quotation
+```text
+Quotation  →  Proforma Invoice  →  Sales Invoice
+Quotation  →  Sales Invoice
+```
+
+| Option | When to use |
+| ------ | ----------- |
+| **Convert to Proforma Invoice** | The customer wants a preliminary invoice before the final sale |
+| **Convert to Sales Invoice** | The customer accepts the quotation and you can bill directly |
+
+---
+
+## Open the Quotation Screen
 
 1. Go to **Sales** → **Sales Entry** → **Quotation**.
+2. Click **Create** to enter a new quotation, or open an existing one to edit it.
 
-{/* TODO: screenshot + explanation */}
+![Quotation](/images/quotation_edit.png)
 
-### 2. Enter the details
+The top of a saved quotation shows the **QT Number** (for example `QUO-2026-10-000001`) and who created and last updated it.
+
+---
+
+## Header Section
+
+Fields marked with **\*** are mandatory.
 
 | Field | Description |
 | ----- | ----------- |
-| {/* TODO */} | {/* TODO */} |
+| **Invoice Date \*** | Date of the quotation. Cannot be edited after saving. |
+| **Location \*** | The location (branch) issuing the quotation. Cannot be edited after saving. |
+| **Sub Location Code \*** | The sub location, for example `001 - Sales`. Cannot be edited after saving. |
+| **Customer Code \*** | The customer. Cannot be edited after saving. |
+| **Customer Name \*** | Filled in automatically from the customer. Cannot be edited. |
+| **Document Reference \*** | A reference for the quotation. Mandatory. |
+| **Remarks** | Any free-text notes. |
 
-### 3. Save
+The totals bar shows **Total Amount**, **Total Tax Amount** and **Total Net Amount**.
 
-* Click **Save** to complete the entry.
+---
+
+## Adding Items
+
+Items are added in the same way as on a Sales Invoice, using **Upload Products** (CSV file), **Quick Add Items** or **Add** (normal add). See [Adding Items to the Invoice](/sales/sales_entry/sales_invoice#adding-items-to-the-invoice).
+
+| Column | Description |
+| ------ | ----------- |
+| **Line Number** | Line number of the item |
+| **Code** | Product code |
+| **Description** | Name of the product |
+| **Pack Id** | The pack or unit the item is sold in |
+| **Quantity** | Quantity |
+| **Unit Price** | Price per unit |
+| **Total Amount** | Amount before tax |
+| **Tax Amount** | Tax for the line |
+| **Net Amount** | Final amount for the line |
+
+Each line has a **pencil icon** to edit it and a **delete icon** to remove it.
+
+---
+
+## Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Upload Products** | Add items from a CSV file |
+| **Quick Add Items** | Add items quickly as rows |
+| **Convert to Proforma Invoice** | Converts the quotation into a [Proforma Invoice](/sales/sales_entry/proforma_invoice) |
+| **Convert to Sales Invoice** | Converts the quotation directly into a [Sales Invoice](/sales/sales_entry/sales_invoice) |
+| **Cancel** | Discard changes and go back |
+| **Update** | Save the changes |
+
+---
+
+## Printing
+
+Printing works the same way as on a Sales Invoice. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing).
+
+| Button | Description |
+| ------ | ----------- |
+| **Print** | Print the quotation |
+| **Print Barcode** | Print barcodes for the items |
+
+> Print templates are **fully customizable** to match each business and each customer's design.
 
 ---
 
 ## Important Notes
 
-> {/* TODO: add rules and gotchas for Quotation */}
+> A quotation can go to a Proforma Invoice first, or straight to a Sales Invoice.
+
+> Document Reference is mandatory on a Quotation.
