@@ -54,9 +54,41 @@
               "icon": "arrow-right"
             },
             {
-              "title": "Products",
+              "group": "Products",
               "href": "/product/product",
-              "icon": "arrow-right"
+              "pages": [
+                {
+                  "title": "Product Details",
+                  "href": "/product/product",
+                  "icon": "arrow-right"
+                },
+                {
+                  "group": "Barcode Printing",
+                  "href": "/product/barcode_printing/overview",
+                  "pages": [
+                    {
+                      "title": "Overview",
+                      "href": "/product/barcode_printing/overview",
+                      "icon": "arrow-right"
+                    },
+                    {
+                      "title": "Zebra (ZPL) Printing",
+                      "href": "/product/barcode_printing/zebra",
+                      "icon": "arrow-right"
+                    },
+                    {
+                      "title": "Sheet (A4) Printing",
+                      "href": "/product/barcode_printing/sheet",
+                      "icon": "arrow-right"
+                    },
+                    {
+                      "title": "PNG Printing",
+                      "href": "/product/barcode_printing/png",
+                      "icon": "arrow-right"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "title": "Options",
@@ -72,32 +104,6 @@
               "title": "Recipe Creation",
               "href": "/product/Recipe_Creation",
               "icon": "arrow-right"
-            },
-            {
-              "group": "Barcode Printing",
-              "href": "/product/barcode_printing/overview",
-              "pages": [
-                {
-                  "title": "Overview",
-                  "href": "/product/barcode_printing/overview",
-                  "icon": "arrow-right"
-                },
-                {
-                  "title": "Zebra (ZPL) Printing",
-                  "href": "/product/barcode_printing/zebra",
-                  "icon": "arrow-right"
-                },
-                {
-                  "title": "Sheet (A4) Printing",
-                  "href": "/product/barcode_printing/sheet",
-                  "icon": "arrow-right"
-                },
-                {
-                  "title": "PNG Printing",
-                  "href": "/product/barcode_printing/png",
-                  "icon": "arrow-right"
-                }
-              ]
             }
           ]
         },
