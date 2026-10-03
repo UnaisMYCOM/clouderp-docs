@@ -1,13 +1,141 @@
 # Sales Reports
 
-The **Reports** menu under Sales Entry provides reports on your sales activity.
+The **Reports** menu under Sales Entry gives you reports on your sales activity. Reports are grouped into three views: **Detailed**, **Summary** and **Tax**.
 
 ---
 
-## Available Reports
+## Open Sales Reports
+
+1. Go to **Sales** → **Sales Entry** → **Reports**.
+2. Choose the report group from the dropdown at the top right: **Detailed**, **Summary** or **Tax**.
+3. Click the report you want. Each report is shown as a button.
+4. Set the filters and click **Filter**.
+
+<Image src="/images/sales_reports_detailed.png" alt="Sales Reports" zoom={true} />
+
+### Filters
+
+Every report uses the same four filters.
+
+| Filter | Description |
+| ------ | ----------- |
+| **From Date** | The first date of the period |
+| **To Date** | The last date of the period |
+| **From Location** | The first location to include |
+| **To Location** | The last location to include |
+
+The filters you apply are shown at the top of the report as **Applied Filters**. Use **Export to Excel** to download the report.
+
+---
+
+## Financial Statement - Summary
+
+This is the **most important** sales report. After End of Day (EOD) has synced from [SmartPOS 7 or RestPOS 7](/sales/sales_entry/pos_sales), open it to check the day's transactions.
+
+It is in the **Detailed** group.
+
+<Image src="/images/sales_reports_financial_summary.png" alt="Financial Statement Summary" zoom={true} />
+
+The report has two tables.
+
+### Debit
+
+The **Debit** side shows how the money was received.
+
+| Line | Description |
+| ---- | ----------- |
+| **Total Cash** | Cash received |
+| **Foreign Currency** | Payments received in foreign currency |
+| **Credit Payment** | Payments received by credit card |
+| **Credit Sale** | Sales given on credit |
+| **Credit Note Payment** | Payments made using a credit note |
+| **Coupon** | Value redeemed through coupons |
+| **Loyalty Redeem** | Value redeemed through loyalty points |
+| **TOTAL DEBIT** | The total of all the lines above |
+
+### Credit
+
+The **Credit** side shows what the sales were made up of. Each line has an **Amount**, the **TAX**, and the **Amt. with TAX**.
+
+| Line | Description |
+| ---- | ----------- |
+| **Gross Sales** | Total sales before deductions |
+| **Void / Refund** | Voided and refunded sales |
+| **Manual Plus** | Manual additions |
+| **Service Charge** | Service charges collected |
+| **Tips** | Tips received |
+| **Staff Meal** | Staff meals |
+| **Complimentary** | Complimentary items |
+| **Other Amount** | Other amounts |
+| **Customer Advance** | Advance amounts from customers |
+| **Customer Pay** | Payments from customers |
+| **Paid In Advance** | Amounts paid in advance |
+| **Banquet Advance** | Advances for banquets |
+| **Delivery Charges** | Delivery charges collected |
+| **Discount** | Discounts given |
+| **TOTAL CREDIT** | The total of all the lines above |
+
+### Financial Summary
+
+At the bottom, the **Financial Summary** shows the **Total Debit**, the **Total Credit** and the **Balance**. A balance of **0.00** means the debit and credit sides agree.
+
+> Check this report after every EOD sync, to confirm the day's transactions are complete and balanced.
+
+---
+
+## Detailed Reports
 
 | Report | Description |
 | ------ | ----------- |
-| {/* TODO */} | {/* TODO */} |
+| **Financial Statement - Summary** | Debit and credit summary of sales, as described above |
+| **Sales Invoice** | Sales invoice transactions in detail |
+| **Online Sales** | Online sales transactions in detail |
+| **Proforma Invoice** | Proforma invoice transactions in detail |
+| **Sales Return** | Sales return transactions in detail |
+| **Quotation** | Quotation transactions in detail |
+| **Point of Sale** | POS sales transactions in detail |
 
-{/* TODO: add screenshots and filter explanations for each report */}
+---
+
+## Summary Reports
+
+<Image src="/images/sales_reports_summary.png" alt="Summary Reports" zoom={true} />
+
+| Report | Description |
+| ------ | ----------- |
+| **Sales Invoice** | Summary of sales invoices |
+| **Online Sales** | Summary of online sales |
+| **Proforma Invoice** | Summary of proforma invoices |
+| **Sales Return** | Summary of sales returns |
+| **Quotation** | Summary of quotations |
+| **Point of Sale** | Summary of POS sales |
+| **Daily** | Sales summarized by day |
+| **Monthly** | Sales summarized by month |
+| **Quarterly** | Sales summarized by quarter |
+| **Customer Basic Info** | Basic information about customers |
+
+---
+
+## Tax Reports
+
+<Image src="/images/sales_reports_tax.png" alt="Tax Reports" zoom={true} />
+
+| Report | Description |
+| ------ | ----------- |
+| **FTA VAT Audit File (FAF)** | The VAT audit file for the Federal Tax Authority |
+| **Purchase Listing** | Listing of purchases for tax reporting |
+| **Supply Listing** | Listing of supplies for tax reporting |
+| **General Ledger** | General ledger entries for tax reporting |
+| **Tax Summary** | Summary of tax for the period |
+| **Sales Tax** | Tax charged on sales |
+| **Sales Return Tax** | Tax on sales returns |
+
+---
+
+## Important Notes
+
+> Every report has a **From Date**, **To Date**, **From Location** and **To Location** filter.
+
+> **Financial Statement - Summary** is the key report to check after EOD sync.
+
+> The other reports are simple to use. Select the report, set the filters and click **Filter**.
