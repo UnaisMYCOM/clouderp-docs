@@ -1,37 +1,142 @@
 # POS Sales
 
-The **POS Sales** screen shows the sales transactions that come from your point-of-sale machines.
+The **POS Sales** screen shows the sales that come from your point-of-sale machines, **SmartPOS 7** and **RestPOS 7**. You can review each day's sales, drill into the items sold, and print or export them.
 
 ---
 
-## When Is the Data Available?
+## How POS Sales Reach Cloud ERP
 
-POS sales data appears in Cloud ERP **only after End of Day (EOD) is completed** from:
+POS sales appear in Cloud ERP **after End of Day (EOD) is completed** on the POS.
 
-* **SmartPOS 7**
-* **RestPOS 7**
+1. Complete **End of Day** on SmartPOS 7 or RestPOS 7.
+2. The day's sales are synced to Cloud ERP.
+3. A record for that day appears in **POS Sales**.
 
-Until EOD is done on the POS machine, its sales will not be visible here.
+Each EOD sync covers **one day**, so there is ideally **one record per day** for each location.
+
+> If a day's sales are missing, check that EOD was completed on the POS for that day.
 
 ---
 
-## Steps
+## POS Sales List
 
-### 1. Complete EOD on the POS
+Go to **Sales** → **Sales Entry** → **POS Sales**.
 
-* Run **End of Day** from SmartPOS 7 or RestPOS 7.
+![POS Sales List](/images/pos_sales_list.png)
 
-### 2. Open POS Sales in Cloud ERP
+### Search and export
 
-1. Go to **Sales** → **Sales Entry** → **POS Sales**.
-2. Filter by date, location or POS machine.
+| Control | Description |
+| ------- | ----------- |
+| **Select Column** | Choose the column you want to search in |
+| **Search by** | Type the value to search for in the selected column |
+| **Export to Excel** | Download the list as an Excel file |
 
-{/* TODO: screenshot + explanation of filters and columns */}
+You can sort the list by clicking a column heading, and move between pages with the page controls at the bottom.
+
+### Columns
+
+| Column | Description |
+| ------ | ----------- |
+| **EOD Serial** | The serial number of the End of Day that created this record |
+| **Sales Date** | The date the sales were made |
+| **Processed Date & Time** | When the EOD was processed and synced |
+| **Location** | The location the sales belong to |
+| **Total Sales Amount** | Total sales for the day |
+| **Total Tax Amount** | Total tax for the day |
+| **Total Discount Amount** | Total discount given during the day |
+| **Created By** | The user who created the record |
+| **Updated By** | The user who last updated the record |
+| **View** | Click the **eye icon** to open the record and see more details |
+
+---
+
+## View a POS Sales Record
+
+Click the **eye icon** on any row to see the full details of that day.
+
+![POS Sales Record](/images/pos_sales_view.png)
+
+### Header
+
+| Field | Description |
+| ----- | ----------- |
+| **EOD Serial** | The EOD serial number. Cannot be edited. |
+| **Sales Date** | The date of the sales |
+| **Processed Date & Time** | When the EOD was processed. Cannot be edited. |
+| **Location** | The location of the sales. Cannot be edited. |
+| **Sub Location** | The sub location, if one applies. Cannot be edited. |
+
+The totals bar shows **Total Sales Amount**, **Total Tax Amount**, **Total Discount Amount** and **Total Net Sales Amount** for the day.
+
+### Tabs
+
+The record has three tabs: **Sales Items**, **More Info** and **Recipe**.
+
+#### Sales Items
+
+Lists every item sold during the day.
+
+| Column | Description |
+| ------ | ----------- |
+| **Line Number** | Line number of the item |
+| **Code** | Product code |
+| **Description** | Name of the product |
+| **Pack Id** | The pack or unit sold, for example `PCS` |
+| **Product Type** | The type of product |
+| **Quantity** | Total quantity sold |
+| **Price** | Selling price per unit |
+| **Cost** | Cost per unit |
+| **Total Amount** | Amount before tax |
+| **Tax Amount** | Tax on the line |
+| **Net Amount** | Final amount for the line |
+| **Profit** | Profit on the line |
+| **Profit Margin%** | Profit as a percentage |
+
+Click **Export to Excel** to download the items.
+
+{/* TODO: More Info tab - add screenshot and explanation */}
+
+#### Recipe
+
+![Recipe Tab](/images/pos_sales_recipe.png)
+
+The **Recipe** tab is for **restaurant customers**. It shows how much raw material was used for the items sold that day, based on the recipes set up for each menu item. See [Recipe Creation](/product/Recipe_Creation).
+
+| Column | Description |
+| ------ | ----------- |
+| **Recipe Product Code** | The recipe or menu item that was sold |
+| **Product Code** | The raw material used |
+| **Description** | Name of the raw material |
+| **Quantity** | Total quantity of the material used |
+
+---
+
+## Printing
+
+Click **Print** on the record to open the **POS Print Preview**.
+
+![POS Print Preview](/images/pos_sales_print.png)
+
+The preview shows your company details, the **Sales Date** and **EOD Serial No**, and the item list with quantity, unit price, tax, total, cost, profit and profit margin.
+
+| Button | Description |
+| ------ | ----------- |
+| **Print** | Print the POS sales report |
+| **Download PDF** | Download the report as a PDF |
+| **Download Excel** | Download the report as an Excel file |
+| **Close** | Close the preview |
+
+The record also has **Print Barcode** and **Back** buttons. Printing works the same way as on a Sales Invoice. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing).
+
+> Print templates are **fully customizable** to match each business and each customer's design.
 
 ---
 
 ## Important Notes
 
-> POS sales are posted by EOD. If a day's sales are missing, check that EOD was completed on that machine.
+> POS Sales data appears only after EOD is done on SmartPOS 7 or RestPOS 7.
 
-> {/* TODO: add whether POS sales can be edited or only viewed */}
+> There is one record per EOD, which means one record for each day.
+
+> The **Recipe** tab is useful for restaurants, to see how much material was consumed by the items sold.
