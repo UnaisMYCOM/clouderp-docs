@@ -73,72 +73,78 @@
       ]
     },
     {
-      "group": "Sales - Sales Entry",
+      "group": "Sales",
       "pages": [
         {
-          "title": "Sales Entry",
+          "group": "Sales Entry",
           "href": "/sales/sales_entry/overview",
-          "icon": "arrow-right"
+          "pages": [
+            {
+              "title": "Overview",
+              "href": "/sales/sales_entry/overview",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "POS Sales",
+              "href": "/sales/sales_entry/pos_sales",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Sales Order",
+              "href": "/sales/sales_entry/sales_order",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Sales Invoice",
+              "href": "/sales/sales_entry/sales_invoice",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Proforma Invoice",
+              "href": "/sales/sales_entry/proforma_invoice",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Sales Return",
+              "href": "/sales/sales_entry/sales_return",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Invoice Receipt",
+              "href": "/sales/sales_entry/invoice_receipt",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Quotation",
+              "href": "/sales/sales_entry/quotation",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Reports",
+              "href": "/sales/sales_entry/reports",
+              "icon": "arrow-right"
+            }
+          ]
         },
         {
-          "title": "POS Sales",
-          "href": "/sales/sales_entry/pos_sales",
-          "icon": "arrow-right"
+          "group": "Customer",
+          "pages": [
+            {
+              "title": "Customer",
+              "href": "/sales/customer/customer",
+              "icon": "arrow-right"
+            }
+          ]
         },
         {
-          "title": "Sales Order",
-          "href": "/sales/sales_entry/sales_order",
-          "icon": "arrow-right"
-        },
-        {
-          "title": "Sales Invoice",
-          "href": "/sales/sales_entry/sales_invoice",
-          "icon": "arrow-right"
-        },
-        {
-          "title": "Proforma Invoice",
-          "href": "/sales/sales_entry/proforma_invoice",
-          "icon": "arrow-right"
-        },
-        {
-          "title": "Sales Return",
-          "href": "/sales/sales_entry/sales_return",
-          "icon": "arrow-right"
-        },
-        {
-          "title": "Invoice Receipt",
-          "href": "/sales/sales_entry/invoice_receipt",
-          "icon": "arrow-right"
-        },
-        {
-          "title": "Quotation",
-          "href": "/sales/sales_entry/quotation",
-          "icon": "arrow-right"
-        },
-        {
-          "title": "Reports",
-          "href": "/sales/sales_entry/reports",
-          "icon": "arrow-right"
-        }
-      ]
-    },
-    {
-      "group": "Sales - Customer",
-      "pages": [
-        {
-          "title": "Customer",
-          "href": "/sales/customer/customer",
-          "icon": "arrow-right"
-        }
-      ]
-    },
-    {
-      "group": "Sales - Promotion",
-      "pages": [
-        {
-          "title": "Promotion",
-          "href": "/sales/promotion/promotions",
-          "icon": "arrow-right"
+          "group": "Promotion",
+          "pages": [
+            {
+              "title": "Promotion",
+              "href": "/sales/promotion/promotions",
+              "icon": "arrow-right"
+            }
+          ]
         }
       ]
     },
