@@ -6,132 +6,186 @@
       "group": "Getting Started",
       "pages": [
         {
-          "title": "Welcome to Cloud ERP",
-          "href": "/"
+          "title": "Welcome to Cloud ERP ",
+          "href": "/",
+          "icon": "rocket"
         }
       ]
     },
     {
-      "group": "Location Setup",
+      "group": "Modules",
       "pages": [
         {
-          "title": "Location Setup",
-          "href": "/location_setup/location"
+          "group": "Location Setup",
+          "pages": [
+            {
+              "title": "Location Setup",
+              "href": "/location_setup/location",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Divison Setup",
+              "href": "/location_setup/division",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Sub location Setup",
+              "href": "/location_setup/sub_location",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "POS Machine Setup",
+              "href": "/location_setup/pos_machine",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Time Setup",
+              "href": "/location_setup/time",
+              "icon": "arrow-right"
+            }
+          ]
         },
         {
-          "title": "Division Setup",
-          "href": "/location_setup/division"
+          "group": "Product Managment",
+          "pages": [
+            {
+              "title": "Groups",
+              "href": "/product/groups",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Products",
+              "href": "/product/product",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Options",
+              "href": "/product/Options",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "More Units",
+              "href": "/product/More_Units",
+              "icon": "arrow-right"
+            },
+            {
+              "title": "Recipe Creation",
+              "href": "/product/Recipe_Creation",
+              "icon": "arrow-right"
+            },
+            {
+              "group": "Barcode Printing",
+              "href": "/product/barcode_printing/overview",
+              "pages": [
+                {
+                  "title": "Overview",
+                  "href": "/product/barcode_printing/overview",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Zebra (ZPL) Printing",
+                  "href": "/product/barcode_printing/zebra",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Sheet (A4) Printing",
+                  "href": "/product/barcode_printing/sheet",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "PNG Printing",
+                  "href": "/product/barcode_printing/png",
+                  "icon": "arrow-right"
+                }
+              ]
+            }
+          ]
         },
         {
-          "title": "Sub location Setup",
-          "href": "/location_setup/sub_location"
+          "group": "Sales Managment",
+          "pages": [
+            {
+              "group": "Sales Entry",
+              "href": "/sales/sales_entry/overview",
+              "pages": [
+                {
+                  "title": "Overview",
+                  "href": "/sales/sales_entry/overview",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "POS Sales",
+                  "href": "/sales/sales_entry/pos_sales",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Sales Order",
+                  "href": "/sales/sales_entry/sales_order",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Sales Invoice",
+                  "href": "/sales/sales_entry/sales_invoice",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Proforma Invoice",
+                  "href": "/sales/sales_entry/proforma_invoice",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Sales Return",
+                  "href": "/sales/sales_entry/sales_return",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Invoice Receipt",
+                  "href": "/sales/sales_entry/invoice_receipt",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Quotation",
+                  "href": "/sales/sales_entry/quotation",
+                  "icon": "arrow-right"
+                },
+                {
+                  "title": "Reports",
+                  "href": "/sales/sales_entry/reports",
+                  "icon": "arrow-right"
+                }
+              ]
+            },
+            {
+              "group": "Customer",
+              "pages": [
+                {
+                  "title": "Customer",
+                  "href": "/sales/customer/customer",
+                  "icon": "arrow-right"
+                }
+              ]
+            },
+            {
+              "group": "Promotion",
+              "pages": [
+                {
+                  "title": "Promotion",
+                  "href": "/sales/promotion/promotions",
+                  "icon": "arrow-right"
+                }
+              ]
+            }
+          ]
         },
         {
-          "title": "POS Machine Setup",
-          "href": "/location_setup/pos_machine"
-        },
-        {
-          "title": "Time Setup",
-          "href": "/location_setup/time"
-        }
-      ]
-    },
-    {
-      "group": "Product Management",
-      "pages": [
-        {
-          "title": "Groups",
-          "href": "/product/groups"
-        },
-        {
-          "title": "Products",
-          "href": "/product/product"
-        },
-        {
-          "title": "Options",
-          "href": "/product/Options"
-        },
-        {
-          "title": "More Units",
-          "href": "/product/More_Units"
-        },
-        {
-          "title": "Recipe Creation",
-          "href": "/product/Recipe_Creation"
-        },
-        {
-          "title": "Barcode Printing",
-          "href": "/product/barcode_printing/overview"
-        },
-        {
-          "title": "Barcode: Zebra (ZPL)",
-          "href": "/product/barcode_printing/zebra"
-        },
-        {
-          "title": "Barcode: Sheet (A4)",
-          "href": "/product/barcode_printing/sheet"
-        },
-        {
-          "title": "Barcode: PNG",
-          "href": "/product/barcode_printing/png"
-        }
-      ]
-    },
-    {
-      "group": "Sales Management",
-      "pages": [
-        {
-          "title": "Sales Entry Overview",
-          "href": "/sales/sales_entry/overview"
-        },
-        {
-          "title": "POS Sales",
-          "href": "/sales/sales_entry/pos_sales"
-        },
-        {
-          "title": "Sales Order",
-          "href": "/sales/sales_entry/sales_order"
-        },
-        {
-          "title": "Sales Invoice",
-          "href": "/sales/sales_entry/sales_invoice"
-        },
-        {
-          "title": "Proforma Invoice",
-          "href": "/sales/sales_entry/proforma_invoice"
-        },
-        {
-          "title": "Sales Return",
-          "href": "/sales/sales_entry/sales_return"
-        },
-        {
-          "title": "Invoice Receipt",
-          "href": "/sales/sales_entry/invoice_receipt"
-        },
-        {
-          "title": "Quotation",
-          "href": "/sales/sales_entry/quotation"
-        },
-        {
-          "title": "Reports",
-          "href": "/sales/sales_entry/reports"
-        },
-        {
-          "title": "Customers",
-          "href": "/sales/customer/customer"
-        },
-        {
-          "title": "Promotions",
-          "href": "/sales/promotion/promotions"
-        }
-      ]
-    },
-    {
-      "group": "Mycom Setup",
-      "pages": [
-        {
-          "title": "Client Creation",
-          "href": "/MYCOM/client_creation"
+          "group": "Mycom Setup",
+          "pages": [
+            {
+              "title": "Client Creation",
+              "href": "/MYCOM/client_creation",
+              "icon": "arrow-right"
+            }
+          ]
         }
       ]
     }
