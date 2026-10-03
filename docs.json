@@ -4,7 +4,6 @@
   "sidebar": [
     {
       "group": "Getting Started",
-      "tab": "home",
       "pages": [
         {
           "title": "Welcome to Cloud ERP",
@@ -14,7 +13,6 @@
     },
     {
       "group": "Location Setup",
-      "tab": "location",
       "pages": [
         {
           "title": "Location Setup",
@@ -40,7 +38,6 @@
     },
     {
       "group": "Product Management",
-      "tab": "product",
       "pages": [
         {
           "title": "Groups",
@@ -66,7 +63,6 @@
     },
     {
       "group": "Barcode Printing",
-      "tab": "product",
       "pages": [
         {
           "title": "Overview",
@@ -88,7 +84,6 @@
     },
     {
       "group": "Sales Entry",
-      "tab": "sales",
       "pages": [
         {
           "title": "Overview",
@@ -130,7 +125,6 @@
     },
     {
       "group": "Customer",
-      "tab": "sales",
       "pages": [
         {
           "title": "Customer",
@@ -140,7 +134,6 @@
     },
     {
       "group": "Promotion",
-      "tab": "sales",
       "pages": [
         {
           "title": "Promotion",
@@ -150,7 +143,6 @@
     },
     {
       "group": "Mycom Setup",
-      "tab": "mycom",
       "pages": [
         {
           "title": "Client Creation",
@@ -162,32 +154,5 @@
   "content": {
     "zoomImages": true,
     "headerDepth": 2
-  },
-  "tabs": [
-    {
-      "id": "home",
-      "title": "Home",
-      "href": "/"
-    },
-    {
-      "id": "location",
-      "title": "Location Setup",
-      "href": "/location_setup/location"
-    },
-    {
-      "id": "product",
-      "title": "Product",
-      "href": "/product/groups"
-    },
-    {
-      "id": "sales",
-      "title": "Sales",
-      "href": "/sales/sales_entry/overview"
-    },
-    {
-      "id": "mycom",
-      "title": "Mycom Setup",
-      "href": "/MYCOM/client_creation"
-    }
-  ]
+  }
 }
