@@ -1,0 +1,267 @@
+# Sales Invoice
+
+Use **Sales Invoice** to bill a customer for goods or services. Invoices can be raised for both **wholesale** and **retail** customers.
+
+---
+
+## Open the Create Screen
+
+1. Go to **Sales** → **Sales Entry** → **Sales Invoice**.
+2. Click **Create** (new invoice).
+
+---
+
+## Header Section
+
+![Sales Invoice Create Screen](/images/sales_invoice_create.png)
+
+Fields marked with **\*** are mandatory.
+
+| Field | Description |
+| ----- | ----------- |
+| **Sales Invoice Entry Date \*** | The date of the invoice. Defaults to today's date. |
+| **Delivery Date** | The date the goods are to be delivered to the customer. Defaults to today's date. |
+| **Sales Type \*** | The type of sales document being created. For this screen it is **Sales Invoice**. |
+| **Location \*** | The location (branch) that is making the sale. Defaults to the location selected at the top of the screen. |
+| **Sub Location Code \*** | The sub location under the selected location from which the stock is sold, for example `001 - Sales`. |
+| **Division Code \*** | The division the sale belongs to, for example `001 - SALE`. |
+| **Document Reference** | An optional reference for the invoice, such as the customer's PO number or a manual invoice book number. |
+| **Customer Code \*** | **Mandatory.** The customer being invoiced. You must select a customer before you can save the invoice. Type the code or click the **search** button to select from the Customer list. |
+| **Customer Name** | Filled in automatically after selecting the customer. This field cannot be edited. |
+| **TRN Number** | The customer's Tax Registration Number, if applicable. |
+| **Salesmen** | The salesman responsible for this sale. Select from the list. |
+| **Payment Type \*** | How the customer pays for this invoice, for example `cash`. |
+| **Price Group \*** | The price list used to price the items on this invoice. The default is `DEFAULT`. Click the **refresh** button next to it to reload prices after changing the price group. |
+| **Tax Type \*** | The tax treatment applied to the invoice, for example `International`. |
+| **Discount Type \*** | How the discount is applied, for example `invoice-percentage` (a percentage on the whole invoice). |
+| **Currency \*** | The currency of the invoice, for example `LKR`. |
+| **Discount % \*** | The discount percentage applied to the invoice. Shown for reference and cannot be edited here. |
+| **Remarks** | Any free-text notes for the invoice. |
+
+---
+
+## Totals Bar
+
+Below the header, a summary bar shows the running totals for the invoice. It updates as items are added.
+
+| Total | Description |
+| ----- | ----------- |
+| **Total Amount** | Sum of the item amounts before tax and discount. |
+| **Total Tax Amount** | Total tax on the invoice. |
+| **Total Discount Amount** | Total discount on the invoice. |
+| **Total Net Amount** | Final invoice amount after tax and discount. |
+| **Outstanding Amount** | The amount still to be collected from the customer. It is calculated live. See [Outstanding Amount](#outstanding-amount). |
+
+---
+
+## Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Upload Products** | Add many items at once by uploading a file. |
+| **Quick Add Items** | Quickly add items to the invoice. |
+| **Cancel** | Discard the invoice and go back. |
+| **Save** | Save the invoice. |
+
+---
+
+## Adding Items to the Invoice
+
+There are **three ways** to add items to a Sales Invoice. Choose the one that suits your work.
+
+| Method | Best for |
+| ------ | -------- |
+| [Upload Products](#1-upload-products) | You already have a list of items in a CSV file |
+| [Quick Add Items](#2-quick-add-items-recommended) | Adding many items fast, row by row. **Most customers use this method.** |
+| [Normal Add](#3-normal-add) | Adding items one by one, filling each field manually |
+
+---
+
+### 1. Upload Products
+
+Use this when you already have a list of items.
+
+1. Click **Upload Products**.
+2. Upload your **CSV file** containing the item list.
+3. The items in the file are added to the transaction.
+
+The CSV file must contain these columns:
+
+| Column | Type | Description |
+| ------ | ---- | ----------- |
+| `product_code` | Text (up to 100 characters) | Code of the product |
+| `qty` | Number (up to 3 decimal places) | Quantity to sell |
+| `price` | Number (up to 3 decimal places) | Selling price per unit |
+
+Example:
+
+```csv
+product_code,qty,price
+1000,2,150.000
+1001,5,75.500
+```
+
+![Upload Products](/images/sales_invoice_upload.png)
+
+> Click **Cancel** to close the window without uploading.
+
+---
+
+### 2. Quick Add Items (Recommended)
+
+Quick Add lets you keep adding items as rows, which makes it the fastest way to enter an invoice.
+
+1. Click **Quick Add Items**.
+2. In the **Search Products** box, search by product code or description. Use the dropdown on the left to choose what to search by.
+3. Select a product and it is added as a row. Keep searching and adding as many items as you need.
+4. For each row, set the **Pack Id**, **Qty**, **Unit Price** and **Tax Group** if needed.
+5. Check the **Quick Items Summary** at the bottom (item count, quantity, amount, tax, discount and net total).
+6. Click **Add (n) Item(s) to Transaction**.
+
+![Quick Item Addition](/images/sales_invoice_quick_add.png)
+
+| Column | Description |
+| ------ | ----------- |
+| **Item Code** | Code of the product |
+| **Description** | Name of the product |
+| **Pack Id** | The pack/unit the item is sold in, for example `PCS` |
+| **Qty** | Quantity being sold |
+| **Unit Price** | Selling price per unit. Can be edited. |
+| **Price** | The price from the selected Price Group |
+| **Tax Group** | Tax group applied to the item, for example `No Tax` |
+| **Tax %** | Tax percentage of the tax group |
+| **Tax Amount** | Tax calculated for the row |
+| **Total** | Row total |
+| **Stock Quantity** | Current stock of the item. It can be **negative**; see the note below. |
+| **Last Net Cost** | Last purchase cost of the item. Fetched automatically for the selected product. |
+| **Avg Cost** | Average cost of the item. Fetched automatically for the selected product. |
+| **Actions** | Delete icon to remove the row |
+
+> Items added through Quick Add can be edited later in the full transaction view.
+
+> **Last Net Cost** and **Avg Cost** are not typed in. The system fetches them from the server for the product you select.
+
+> **Stock Quantity** can show a negative value. This happens when the client has stock in hand but has not yet recorded a GRN or any other stock-in transaction for the item, so the system's stock figure is below zero. Selling is still allowed.
+
+---
+
+### 3. Normal Add
+
+Use this to add items one at a time. It takes more steps, so it is used less often than Quick Add.
+
+1. In the **Products** tab, click **Add**.
+2. Fill in the item details.
+3. Click **Save** to add the item to the invoice. Repeat for each item.
+
+![Normal Add](/images/sales_invoice_add_item.png)
+
+| Field | Description |
+| ----- | ----------- |
+| **Line Number** | Line number of the item. Filled in automatically. |
+| **Tran Type** | Type of line, for example `NORMAL`. |
+| **Item Code** | The product code. Type it or click the **search** button to select. |
+| **Description** | Product name. Filled in automatically. |
+| **UOM Code** | The unit of measure for the item. Type it or click the **search** button. |
+| **Product Type** | Type of product, for example `MATERIAL`. Filled in automatically. |
+| **Tracking Type** | Tracking type of the product. Filled in automatically. |
+| **Package Quantity** | Quantity in packages, if the item is sold in packs. |
+| **Quantity** | Quantity being sold. |
+| **Unit Price** | Selling price per unit. |
+| **Gross Amount** | Quantity multiplied by unit price. Calculated automatically. |
+| **Tax Amount** | Tax for the line. Calculated automatically. |
+| **Net Amount** | Final amount for the line. Calculated automatically. |
+| **More Description** | Optional extra notes for the item. |
+
+---
+
+## Payment Tab
+
+Use the **Payment** tab to record how the customer pays for the invoice. You can add **as many payment lines as you need**, so one invoice can be settled with a mix of payment types, for example part cash and part cheque.
+
+![Payment Tab](/images/sales_invoice_payment.png)
+
+### Adding Payment Lines
+
+1. Open the **Payment** tab.
+2. Click **Add Row**.
+3. Fill in the payment details.
+4. Repeat for each payment received.
+
+| Field | Description |
+| ----- | ----------- |
+| **Amount** | The amount received in this payment line. |
+| **Payment Type** | How the customer paid. See the options below. |
+| **Check No** | The cheque number. This applies **only to the Cheque payment type**. |
+| **Bank** | The bank the cheque or transfer is drawn on. |
+| **Action** | Click the delete icon to remove the payment line. |
+
+### Payment Types
+
+![Payment Types](/images/sales_invoice_payment_types.png)
+
+| Payment Type | Use when |
+| ------------ | -------- |
+| **Cash** | The customer pays in cash |
+| **Credit** | The customer pays by credit card |
+| **Bank Transfer** | The customer pays by bank transfer |
+| **Cheque** | The customer pays by cheque |
+
+### Post to Invoice Receipt
+
+Once the payment lines are entered, click **Post to Invoice Receipt**. The payments are then posted to the **Invoice Receipt** window, where they are recorded against the customer's invoice. See [Invoice Receipt](/sales/sales_entry/invoice_receipt).
+
+### Outstanding Amount
+
+The **Outstanding Amount** at the top of the invoice shows how much is still pending from the customer. It updates live as you add products, returns and payments, so you can see at a glance whether the invoice is fully settled.
+
+```text
+Outstanding Amount = Total Sales Invoice - Total Sales Return - Total Paid Amount
+```
+
+| Part | Meaning |
+| ---- | ------- |
+| **Total Sales Invoice** | The net amount of the invoice |
+| **Total Sales Return** | The value of goods the customer has returned against it |
+| **Total Paid Amount** | The total of all payments received |
+
+An outstanding amount of **0.0** means the invoice is fully paid.
+
+---
+
+## Convert Buttons
+
+Once an invoice is saved, the invoice screen shows buttons that convert it into another document.
+
+| Button | Description |
+| ------ | ----------- |
+| **Convert to Receivable Invoice** | Creates a receivable invoice entry in the **Accounts** module for this sales invoice. |
+| **Convert to Invoice Receipt** | Converts the whole invoice into an invoice receipt, which is a payment. It does the same job as **Post to Invoice Receipt** in the [Payment tab](#payment-tab), but for the full invoice in one click. |
+| **Convert to SR** | Converts the invoice into a **Sales Return** (SR). See [Sales Return](/sales/sales_entry/sales_return). |
+
+---
+
+## Saving and Printing
+
+After the invoice is saved, you can print it from the invoice screen.
+
+| Button | Description |
+| ------ | ----------- |
+| **Print** | Print the sales invoice |
+| **Print Delivery Note** | Print a delivery note for the invoice |
+| **Print Tax Invoice** | Print the tax invoice |
+
+Each button opens a **Print Preview** window. The preview shows your company details, the customer under **Bill To**, the item list and totals, and the **Payment Transaction Details** (payment type, invoice amount, paid amount and balance) with the **Total**, **Paid Amount** and **Balance Due**.
+
+![Sales Invoice Print Preview](/images/sales_invoice_print.png)
+
+From the preview you can **Print**, **Download PDF**, **Download Excel**, or **Close** the window.
+
+> Print templates are **fully customizable** to match each business and each customer's design, including the logo, layout, fields and wording.
+
+---
+
+## Important Notes
+
+> **Customer** is mandatory. Select the customer first, so the customer name and TRN are filled in automatically.
+
+> Click the **refresh** button beside **Price Group** after changing it, so the item prices update.
