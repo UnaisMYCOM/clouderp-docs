@@ -58,35 +58,30 @@
         {
           "title": "Recipe Creation",
           "href": "/product/Recipe_Creation"
-        }
-      ]
-    },
-    {
-      "group": "Barcode Printing",
-      "pages": [
+        },
         {
-          "title": "Overview",
+          "title": "Barcode Printing",
           "href": "/product/barcode_printing/overview"
         },
         {
-          "title": "Zebra (ZPL) Printing",
+          "title": "Barcode: Zebra (ZPL)",
           "href": "/product/barcode_printing/zebra"
         },
         {
-          "title": "Sheet (A4) Printing",
+          "title": "Barcode: Sheet (A4)",
           "href": "/product/barcode_printing/sheet"
         },
         {
-          "title": "PNG Printing",
+          "title": "Barcode: PNG",
           "href": "/product/barcode_printing/png"
         }
       ]
     },
     {
-      "group": "Sales Entry",
+      "group": "Sales Management",
       "pages": [
         {
-          "title": "Overview",
+          "title": "Sales Entry Overview",
           "href": "/sales/sales_entry/overview"
         },
         {
@@ -120,23 +115,13 @@
         {
           "title": "Reports",
           "href": "/sales/sales_entry/reports"
-        }
-      ]
-    },
-    {
-      "group": "Customer",
-      "pages": [
+        },
         {
-          "title": "Customer",
+          "title": "Customers",
           "href": "/sales/customer/customer"
-        }
-      ]
-    },
-    {
-      "group": "Promotion",
-      "pages": [
+        },
         {
-          "title": "Promotion",
+          "title": "Promotions",
           "href": "/sales/promotion/promotions"
         }
       ]
