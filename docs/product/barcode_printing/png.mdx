@@ -1,0 +1,40 @@
+# PNG Printing
+
+Use **PNG printing** for printers that **do not support ZPL**, such as many Chinese label printers. The label is created as an image and printed through the browser, so the printer must be able to **print images**.
+
+> This option must be configured by the support team. See [Barcode Printing](/product/barcode_printing/overview).
+
+---
+
+## Print Labels
+
+1. Go to **Product Management** → **Product** → **Material Master** and open the item.
+2. Open the **More Codes** tab and click **Print Barcode**.
+
+   <Image src="/images/barcode_more_codes.png" alt="Print Barcode button in the More Codes tab" zoom={true} />
+
+3. The **Png Barcode Printing** window opens.
+
+<Image src="/images/barcode_png.png" alt="Png Barcode Printing window" zoom={true} />
+
+4. Under **Select Items**, tick the item and enter the **Qty**.
+5. Check the label in the **Preview** panel.
+6. Click **Print**. The browser print window opens.
+
+<Image src="/images/barcode_png_print.png" alt="Browser print window for PNG printing" zoom={true} />
+
+7. Select your label printer, then print.
+
+| Field | Description |
+| ----- | ----------- |
+| **Select Items** | The items to print |
+| **Qty** | Number of labels to print for each item |
+| **Preview** | Shows the label image that will be printed |
+| **Clear All** | Unticks all selected items |
+
+---
+
+## Notes
+
+> - The printer must support **image printing**. If it only understands its own language and cannot print images, this option will not work.
+> - Choose the correct printer in the browser print window. The label size and paper settings of that printer decide the final output.

@@ -1,0 +1,52 @@
+# Barcode Printing
+
+Cloud ERP can print product barcode labels in **three ways**. Which one you use depends on the printer you have in the shop or warehouse.
+
+---
+
+## Printing Types
+
+| Type | Best for | Page |
+| ---- | -------- | ---- |
+| **Zebra (ZPL) Printing** | Zebra and other label printers that support the **ZPL** language | [Zebra (ZPL) Printing](/product/barcode_printing/zebra) |
+| **Sheet (A4) Printing** | Normal laser or inkjet printers using A4 label sheets | [Sheet (A4) Printing](/product/barcode_printing/sheet) |
+| **PNG Printing** | Printers that do **not** support ZPL (for example, many Chinese label printers), as long as the printer can print images | [PNG Printing](/product/barcode_printing/png) |
+
+---
+
+## Before You Start
+
+> **Inform the Support team first.** Barcode printing is configured by the support team for each client. Tell them which printer you use and which type you need (Zebra, Sheet or PNG), so they can set up the correct template and print option for your account.
+
+Once support has configured it, the **Print Barcode** option becomes available on the product screen and on the stock documents listed below.
+
+---
+
+## Where You Can Print Barcodes
+
+### From a Product
+
+1. Go to **Product Management** → **Product** → **Material Master**.
+2. Open the product.
+3. Open the **More Codes** tab.
+4. Click **Print Barcode**.
+
+<Image src="/images/barcode_more_codes.png" alt="Print Barcode button in the More Codes tab" zoom={true} />
+
+### From Documents
+
+For Zebra printing, barcodes can also be printed from these documents, so you can label the exact items you have just received or sold:
+
+- **GRN** (Goods Received Note)
+- **PR** (Purchase Return)
+- **Sales**
+
+---
+
+## Which Type Should I Choose?
+
+- Use **Zebra (ZPL)** if you have a Zebra-compatible label printer. It is the fastest option and prints directly through the printer driver.
+- Use **Sheet (A4)** if you only have a normal office printer and want to print many labels on one sheet.
+- Use **PNG** if your label printer does not understand ZPL but can print images.
+
+{/* TODO: confirm with support whether more than one type can be enabled for the same client. */}
