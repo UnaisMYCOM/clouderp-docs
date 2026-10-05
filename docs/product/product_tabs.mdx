@@ -1,0 +1,186 @@
+# Product Tabs
+
+After you open a product in **Product Management** → **Product** → **Material Master**, the product screen has several tabs. This page explains the tabs used to set up prices, units, barcodes, suppliers and tax for a product.
+
+| Tab | Purpose |
+| --- | ------- |
+| [Price List Item](#price-list-item) | Selling price and MRP of the product for each price group and unit |
+| [Product UOM](#product-uom) | Extra units of measure for the product (for example, Carton) and how they convert |
+| [More Codes](#more-codes) | Additional barcodes for the product, and printing barcodes |
+| [Product Supplier](#product-supplier) | Suppliers that supply this product |
+| [Tax Setup](#tax-setup) | Tax group and tax type applied to the product |
+
+> Fields marked with * are mandatory.
+
+---
+
+## Price List Item
+
+Use this tab to set the selling price of the product. Each price is linked to a **price group** (for example, a retail group) and a **unit of measure**.
+
+<Image src="/images/product_tab_price_list.png" alt="Price List Item tab" zoom={true} />
+
+The tab has two sub tabs: **Price List Items** and **More UOM Prices**.
+
+### Add a Price
+
+1. Open the product and click the **Price List Item** tab.
+2. Fill in the fields below.
+3. Click **Save**. Click **Clear** to empty the fields.
+
+| Field | Description |
+| ----- | ----------- |
+| **Price Group \*** | The price group this price applies to. Select it from the list |
+| **UOM Code \*** | The unit the price is for (for example, `PCS`). Use the search icon to pick a unit |
+| **Min Quantity \*** | The minimum quantity from which this price applies. Normally `1` |
+| **Price \*** | The selling price |
+| **MRP \*** | The maximum retail price |
+| **Active** | Turn on to use this price. Turn off to stop using it |
+| **More Prices** | Turn on if the same price group needs additional prices for this unit |
+
+### Price List Table
+
+The table below the form lists all prices saved for the product.
+
+| Column | Description |
+| ------ | ----------- |
+| UOM Code | Unit of the price |
+| Price Group | Code of the price group |
+| Price Group Description | Name of the price group |
+| Min Quantity | Quantity from which the price applies |
+| Price | Current selling price |
+| Previous Price | The price before the last change |
+| MRP | Maximum retail price |
+| Active | Shows whether the price is active |
+| More Prices | Shows **NO** or **YES**. Use the **More Prices** button to open the additional prices |
+| Created By / Updated By | The users who created and last changed the price |
+| Action | Edit the price (pencil icon) |
+
+To change a price, click the pencil icon in the **Action** column. The values load into the form. Change them and click **Save**. Click **Cancel** to leave edit mode.
+
+{/* TODO: confirm how More Prices and the More UOM Prices sub tab work (quantity-based or customer-based prices?). */}
+
+---
+
+## Product UOM
+
+Use this tab to add other units for the product, such as a carton, and tell the system how many base units each one contains.
+
+<Image src="/images/product_tab_uom.png" alt="Product UOM tab" zoom={true} />
+
+### Add a Unit
+
+1. Open the product and click the **Product UOM** tab.
+2. Fill in the fields below.
+3. Click **Save**.
+
+| Field | Description |
+| ----- | ----------- |
+| **UOM Code \*** | The unit to add (for example, `CTN`). Use the search icon to pick a unit |
+| **Conversion Factor \*** | How many base units are in this unit |
+| **Description** | Optional note |
+| **Active** | Turn on to use the unit. Turn off to stop using it |
+
+### Example
+
+| UOM Code | Conversion Factor | Meaning |
+| -------- | ----------------- | ------- |
+| `PCS` | 1 | The base unit |
+| `CTN` | 15 | 1 carton contains 15 pieces |
+
+Use the edit icon to change a unit and the delete icon to remove it.
+
+> Units must exist in the system before you can add them to a product. See [More Units](/product/More_Units).
+
+---
+
+## More Codes
+
+Use this tab to give the product more than one barcode. For example, a carton can have its own barcode, or a supplier's barcode can be added next to your own.
+
+<Image src="/images/product_tab_more_codes.png" alt="More Codes tab" zoom={true} />
+
+### Add a Barcode
+
+1. Open the product and click the **More Codes** tab.
+2. Fill in the fields below.
+3. Click **Save**.
+
+| Field | Description |
+| ----- | ----------- |
+| **Barcode \*** | The barcode value. For a generated barcode this field is not editable |
+| **Barcode Type \*** | The barcode standard, for example `EAN13` |
+| **Check Digit Type \*** | How the check digit is calculated, for example `MOD10` |
+| **Description \*** | Description for this barcode |
+| **Description2** | Optional second description |
+| **UOM Code \*** | The unit this barcode belongs to (for example, `PCS` or `CTN`) |
+| **Supplier Barcode** | Turn on if the barcode comes from the supplier |
+| **Valid** | Turn on to use the barcode. Turn off to stop using it |
+
+### Barcode Table
+
+| Column | Description |
+| ------ | ----------- |
+| Barcode | The barcode value |
+| Barcode Type / Check Digit Type | The standard and check digit method |
+| Description / Description2 | Barcode descriptions |
+| UOM Code | Unit the barcode is for |
+| Default | `Y` for the default barcode, `N` for the others |
+| Supplier Barcode | **YES** if it is a supplier barcode |
+| Valid | Shows whether the barcode is valid |
+| Action | Edit or delete. The default barcode shows **Non-editable** |
+
+> The **default barcode** is created by the system for the base unit. It cannot be edited or deleted.
+
+### Print Barcode
+
+Click **Print Barcode** (top right of the tab) to print labels for the product. See [Barcode Printing](/product/barcode_printing/overview).
+
+---
+
+## Product Supplier
+
+Use this tab to record which suppliers supply the product and the prices they offer.
+
+<Image src="/images/product_tab_supplier.png" alt="Product Supplier tab" zoom={true} />
+
+1. Open the product and click the **Product Supplier** tab.
+2. Click **Create Product Supplier**.
+3. Select the supplier and fill in the details, then save.
+
+| Column | Description |
+| ------ | ----------- |
+| Supplier Code | The supplier |
+| Last Purchase Date | Date the product was last purchased from this supplier |
+| Purchase UOM Code | Unit in which it is purchased |
+| Supplier Item Reference | The supplier's own code or reference for the product |
+| Pack ID | The pack of the product |
+| Brand ID | The brand of the product |
+| Last Purchase Price | Price paid on the last purchase |
+| Price | Current purchase price from this supplier |
+| Valid | Shows whether the supplier link is valid |
+| Action | Edit or delete the supplier link |
+
+> Last Purchase Date and Last Purchase Price are updated from purchases (for example, GRN), so you normally do not enter them by hand.
+
+{/* TODO: confirm which fields are filled when creating a product supplier, and whether last purchase values come from GRN. */}
+
+---
+
+## Tax Setup
+
+Use this tab to link the product to a tax group and tax type.
+
+<Image src="/images/product_tab_tax.png" alt="Tax Setup tab" zoom={true} />
+
+1. Open the product and click the **Tax Setup** tab.
+2. Fill in the fields below.
+3. Click **Save**.
+
+| Field | Description |
+| ----- | ----------- |
+| **Tax group code \*** | The tax group to apply (select from the list) |
+| **Tax Type \*** | The type of tax in that group (select from the list) |
+| **Active** | Turn on to use this tax setup |
+
+The table shows the saved tax setups. Use **Select Column** and **Search by** to find a record. When nothing is saved, it shows **No Data Available**.

@@ -63,6 +63,11 @@
                   "icon": "arrow-right"
                 },
                 {
+                  "title": "Product Tabs",
+                  "href": "/product/product_tabs",
+                  "icon": "arrow-right"
+                },
+                {
                   "group": "Barcode Printing",
                   "href": "/product/barcode_printing/overview",
                   "pages": [
