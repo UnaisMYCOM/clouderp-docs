@@ -129,7 +129,7 @@ Items are added the same way on every document: **Upload Products** (CSV file), 
 | **Quantity** | Quantity received |
 | **MRP** | Maximum retail price |
 | **Unit Price** | Purchase price per unit |
-| **Margin %** | The margin between the cost and the selling price |
+| **Margin %** | The profit margin of the item, calculated from the **MRP** and the **unit cost** (Unit Price). See [Margin %](#margin-) |
 | **Total Amount** | Amount before discount and tax |
 | **Tax Amount** | Tax for the line |
 | **Discount amount** | Discount for the line |
@@ -137,7 +137,17 @@ Items are added the same way on every document: **Upload Products** (CSV file), 
 
 Each line has a **pencil icon** to edit it, a **delete icon** to remove it and a **three-dot menu** for more options.
 
-{/* TODO: confirm how Margin % is calculated and what the three-dot menu on each line contains. */}
+#### Margin %
+
+**Margin %** is worked out for each line from two values: the item's **MRP** (the price you expect to sell at) and its **unit cost** (the **Unit Price** you pay the supplier). The larger the gap between the MRP and the unit cost, the higher the margin.
+
+| MRP | Unit Cost | Margin % |
+| --- | --------- | -------- |
+| 720 | 720 | 0 (cost equals MRP, so there is no margin) |
+
+Use the margin to check that the price on the supplier's invoice leaves you a healthy profit before you save the GRN.
+
+{/* TODO: confirm what the three-dot menu on each line contains. */}
 
 ### Payment Tab
 
@@ -150,14 +160,14 @@ The **Payment** tab records payments against the GRN, in the same way as the Pay
 | Button | Description |
 | ------ | ----------- |
 | **Upload Products** | Add items from a CSV file |
-| **Convert to Purchase Receipt** | Records a payment to the supplier for this GRN |
+| **Convert to Purchase Receipt** | Converts the **entire GRN** into a purchase payment for the supplier in one step. See [Purchase Payments](/purchase/purchase_payments) |
 | **Convert to PR** | Creates a [Purchase Return](/purchase/purchase_return) for the goods |
 | **Convert to Payable Invoice** | Creates a payable invoice, which posts an entry in the Accounts module |
 | **Quick Add Items** | Add items quickly as rows |
 | **Cancel** | Discard changes and go back |
 | **Update** | Save the changes |
 
-{/* TODO: confirm what Convert to Purchase Receipt does. */}
+> **Convert to Purchase Receipt** pays the whole GRN. To pay only part of it, or to pay with several payment types, use the [Payment tab](#payment-tab) and **Post to Purchase Payment**.
 
 ---
 
