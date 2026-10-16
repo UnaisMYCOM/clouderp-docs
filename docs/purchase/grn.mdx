@@ -151,9 +151,28 @@ Use the margin to check that the price on the supplier's invoice leaves you a he
 
 ### Payment Tab
 
-The **Payment** tab records payments against the GRN, in the same way as the Payment tab of a [Sales Invoice](/sales/sales_entry/sales_invoice#payment-tab).
+Use the **Payment** tab to record how you pay the supplier for the GRN. You can add **as many payment lines as you need**, so one GRN can be settled with a mix of payment types, for example part cash and part cheque.
 
-{/* TODO: add Payment tab screenshot and explanation. */}
+<Image src="/images/grn_payment.png" alt="GRN Payment tab" zoom={true} />
+
+1. Open the **Payment** tab.
+2. Click **Add Row**.
+3. Fill in the payment details.
+4. Repeat for each payment made.
+
+| Field | Description |
+| ----- | ----------- |
+| **Amount** | The amount paid in this payment line |
+| **Payment Type** | How you paid, for example `Cash` |
+| **Check No** | The cheque number. This applies **only to the Cheque payment type** |
+| **Bank** | The bank the cheque or transfer is drawn on |
+| **Action** | Click the delete icon to remove the payment line |
+
+Payment types are the same as on a Sales Invoice: Cash, Credit (credit card), Bank Transfer and Cheque. See [Payment Types](/sales/sales_entry/sales_invoice#payment-types).
+
+**Post to Purchase Payment**
+
+Once the payment lines are entered, click **Post to Purchase Payment**. The payments are then posted to the **Purchase Payments** window, where they are recorded against the supplier. See [Purchase Payments](/purchase/purchase_payments).
 
 ### Buttons
 
