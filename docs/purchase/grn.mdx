@@ -70,12 +70,108 @@ You can create a GRN in two ways:
 | **From a Purchase Order** | Open the purchase order and click **Convert to GRN**. You can convert fully or partially. See [Convert to GRN](/purchase/purchase_order#convert-to-grn) |
 | **Directly** | Click **Create Goods Received Note** on the GRN list and enter the supplier and items |
 
+---
+
+## GRN Screen
+
+<Image src="/images/grn_edit.png" alt="Goods Received Note" zoom={true} />
+
+The top of a saved GRN shows its number (for example `GRN-2026-09-000620`) and who created and last updated it. Click **Hide** to collapse the header section and see more of the item list.
+
+### Header Section
+
+Fields marked with **\*** are mandatory. Fields marked *non editable* cannot be changed after the GRN is saved.
+
+| Field | Description |
+| ----- | ----------- |
+| **GRN Date \*** | The date the goods were received. Non editable |
+| **Delivery Date \*** | The date the goods were delivered. This one can be changed |
+| **Location \*** | The location (branch) receiving the goods. Non editable |
+| **Sub Location Code \*** | The sub location the stock goes into, for example `001 - Sales`. Non editable |
+| **Division Code \*** | The division, for example `001 - SALE`. Non editable |
+| **Supplier Invoice Number** | The supplier's invoice number for this delivery. Non editable |
+| **Purchase Order** | The purchase order this GRN was created from. Filled in automatically when you convert a PO. Non editable |
+| **Supplier Code \*** | The supplier. Non editable |
+| **Supplier Name** | Filled in automatically from the supplier. Non editable |
+| **Payment Type \*** | How the purchase is paid, for example `credit` |
+| **GRN Type \*** | The type of GRN, for example `Normal` |
+| **Purchase Type \*** | `Local` or `International` |
+| **Discount Type** | The kind of discount, for example `Invoice Discount (%)`. Non editable |
+| **Currency \*** | The currency of the GRN, for example `LKR` |
+| **Discount % \*** | A percentage discount applied to the whole GRN. Enter `0` for no discount |
+| **Agreement Discount %** | The discount from the supplier's agreement. Filled in automatically. Non editable |
+| **Remarks** | Any free-text notes |
+| **No Tax** | Tick this to create the GRN without tax |
+
+{/* TODO: confirm the options for Payment Type and GRN Type, and where Agreement Discount % comes from (Supplier Agreements). */}
+
+### Totals Bar
+
+| Total | Description |
+| ----- | ----------- |
+| **GRN Total Amount** | Total of all lines before discount and tax |
+| **Total Discount Amount** | Total discount |
+| **Total Tax Amount** | Total tax |
+| **Total Net Amount** | Final amount payable for this GRN |
+| **Outstanding Payable** | The total amount currently owed to this supplier |
+
+### Products Tab
+
 Items are added the same way on every document: **Upload Products** (CSV file), **Quick Add Items** or **Add**. See [Adding Items to the Invoice](/sales/sales_entry/sales_invoice#adding-items-to-the-invoice).
 
-{/* TODO: add the GRN create/edit screen: header fields, item columns, buttons, Other Expenses tab, printing (invoice and barcode). */}
+| Column | Description |
+| ------ | ----------- |
+| **Line Number** | Line number of the item |
+| **Code** | Product code |
+| **Description** | Name of the product |
+| **Last Net Cost** | The net cost of the item on the previous purchase |
+| **UOM Code** | The unit of measure the item is received in |
+| **Quantity** | Quantity received |
+| **MRP** | Maximum retail price |
+| **Unit Price** | Purchase price per unit |
+| **Margin %** | The margin between the cost and the selling price |
+| **Total Amount** | Amount before discount and tax |
+| **Tax Amount** | Tax for the line |
+| **Discount amount** | Discount for the line |
+| **Net Amount** | Final amount for the line |
+
+Each line has a **pencil icon** to edit it, a **delete icon** to remove it and a **three-dot menu** for more options.
+
+{/* TODO: confirm how Margin % is calculated and what the three-dot menu on each line contains. */}
+
+### Payment Tab
+
+The **Payment** tab records payments against the GRN, in the same way as the Payment tab of a [Sales Invoice](/sales/sales_entry/sales_invoice#payment-tab).
+
+{/* TODO: add Payment tab screenshot and explanation. */}
+
+### Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Upload Products** | Add items from a CSV file |
+| **Convert to Purchase Receipt** | Records a payment to the supplier for this GRN |
+| **Convert to PR** | Creates a [Purchase Return](/purchase/purchase_return) for the goods |
+| **Convert to Payable Invoice** | Creates a payable invoice, which posts an entry in the Accounts module |
+| **Quick Add Items** | Add items quickly as rows |
+| **Cancel** | Discard changes and go back |
+| **Update** | Save the changes |
+
+{/* TODO: confirm what Convert to Purchase Receipt does. */}
 
 ---
 
 ## Printing
 
-Printing works the same way on every document. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing). Barcodes for the received items can be printed from the GRN. See [Barcode Printing](/product/barcode_printing/overview).
+The buttons at the top right of the GRN are:
+
+| Button | Description |
+| ------ | ----------- |
+| **Back** | Return to the GRN list |
+| **Print Barcode** | Print barcodes for the received items. See [Barcode Printing](/product/barcode_printing/overview) |
+| **Print** | Print the GRN |
+| **Export** | Export the GRN |
+
+Printing works the same way on every document. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing).
+
+> Print templates are **fully customizable**. Contact support if you want a different design.
