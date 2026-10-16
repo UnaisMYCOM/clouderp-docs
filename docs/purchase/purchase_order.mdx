@@ -1,5 +1,130 @@
 # Purchase Order
 
-Create purchase orders to order goods from suppliers.
+A **Purchase Order (PO)** is an order you send to a supplier for goods you want to buy. It records the items, quantities and prices agreed, and it is later converted into a [Goods Received Note](/purchase/grn) when the goods arrive.
 
-{/* TODO: add steps, screenshots and field descriptions for Purchase Order. */}
+> A Purchase Order **does not affect stock**. Stock is updated only when the goods are received on a GRN.
+
+---
+
+## Document Flow
+
+```text
+Purchase Order  →  Goods Received Note (GRN)  →  Purchase Return
+```
+
+A Purchase Order can be converted to a GRN **fully or partially**, as many times as needed. See [Convert to GRN](#convert-to-grn).
+
+---
+
+## Open the Purchase Order Screen
+
+1. Go to **Purchase Management** → **Purchase Order**.
+2. Click **Create** to enter a new purchase order, or open an existing one to edit it.
+
+<Image src="/images/purchase_order_edit.png" alt="Purchase Order" zoom={true} />
+
+The top of a saved purchase order shows its number (for example `PO-2026-10-000020`) and who created and last updated it. Click **Hide** to collapse the header section and see more of the item list.
+
+---
+
+## Create a Purchase Order
+
+To create a purchase order, you need to:
+
+1. Select the **PO Date** and **Delivery Date**.
+2. Select the **Supplier Code**.
+3. Add the items you want to buy.
+4. Save the purchase order.
+
+---
+
+## Header Section
+
+Fields marked with **\*** are mandatory. After a purchase order is saved, these fields cannot be edited.
+
+| Field | Description |
+| ----- | ----------- |
+| **PO Date \*** | The date of the purchase order |
+| **Delivery Date \*** | The date you expect the goods to be delivered |
+| **Location \*** | The location (branch) placing the order, for example `001 - Dubai` |
+| **Sub Location Code \*** | The sub location the goods are for, for example `001 - Sales` |
+| **Purchase Type \*** | The type of purchase, for example `International` |
+| **Supplier Code \*** | The supplier you are ordering from |
+| **Supplier Name** | Filled in automatically from the supplier |
+| **Supplier Contact** | Filled in automatically from the supplier |
+| **PO Type \*** | The type of purchase order, for example `Direct` |
+| **Remarks** | Any free-text notes |
+| **No Tax** | Tick this if the purchase order should be created without tax |
+
+{/* TODO: confirm the options for Purchase Type and PO Type, and what No Tax does. */}
+
+The totals bar shows **PO Total Amount**, **Total Tax Amount** and **Total Net Amount**.
+
+---
+
+## Adding Items
+
+Items are added the same way on every document: **Upload Products** (CSV file), **Quick Add Items** (recommended for most-used items), or **Add** (normal add). See [Adding Items to the Invoice](/sales/sales_entry/sales_invoice#adding-items-to-the-invoice) for the steps.
+
+| Column | Description |
+| ------ | ----------- |
+| **Line Number** | Line number of the item |
+| **Code** | Product code |
+| **Description** | Name of the product |
+| **Pack Id** | The pack or unit the item is bought in |
+| **Quantity** | Quantity ordered |
+| **Unit Price** | Price per unit |
+| **Total Amount** | Amount before tax |
+| **Tax Amount** | Tax for the line |
+| **Net Amount** | Final amount for the line |
+
+Each line has a **pencil icon** to edit it and a **delete icon** to remove it.
+
+---
+
+## Convert to GRN
+
+When the goods arrive, click **Convert to GRN** to create a [Goods Received Note](/purchase/grn) from the purchase order. Stock is updated when the GRN is created.
+
+You can convert in two ways:
+
+| Method | Use when |
+| ------ | -------- |
+| **Full conversion** | All ordered quantities have arrived |
+| **Partial conversion** | Only some items, or only part of a quantity, have arrived |
+
+You can keep converting the same purchase order again and again until the **full ordered quantity** has been received. For example, if you order 100 units and 40 arrive first, convert 40 to a GRN. When the next 60 arrive, convert the remaining quantity.
+
+---
+
+## Buttons
+
+| Button | Description |
+| ------ | ----------- |
+| **Convert to GRN** | Creates a GRN from the purchase order, fully or partially |
+| **Upload Products** | Add items from a CSV file |
+| **Quick Add Items** | Add items quickly as rows |
+| **Add** | Add a single item |
+| **Cancel** | Discard changes and go back |
+| **Update** | Save the changes |
+
+---
+
+## Printing
+
+Printing works the same way on every document. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing).
+
+| Button | Description |
+| ------ | ----------- |
+| **Print** | Print the purchase order |
+| **Print Barcode** | Print barcodes for the items on the purchase order. See [Barcode Printing](/product/barcode_printing/overview) |
+
+> Print templates are **fully customizable** to match each business. Contact support if you want a different design.
+
+---
+
+## Important Notes
+
+> A Purchase Order does not change stock. Stock changes only when it is converted to a GRN.
+
+> A purchase order can be converted to a GRN in parts until the full quantity is received.
