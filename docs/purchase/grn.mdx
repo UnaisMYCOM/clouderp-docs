@@ -1,5 +1,81 @@
-# Goods Received Note
+# Goods Received Note (GRN)
 
-Record goods received from a supplier (GRN).
+A **Goods Received Note (GRN)** records goods that have arrived from a supplier. A GRN can be created directly, or by converting a [Purchase Order](/purchase/purchase_order) fully or partially.
 
-{/* TODO: add steps, screenshots and field descriptions for Goods Received Note. */}
+---
+
+## Document Flow
+
+```text
+Purchase Order  →  Goods Received Note (GRN)  →  Purchase Return
+```
+
+---
+
+## GRN List
+
+Go to **Purchase Management** → **Goods Received Note**. The main screen lists every GRN.
+
+<Image src="/images/grn_list.png" alt="Goods Received Note list" zoom={true} />
+
+### Search, Filter and Export
+
+| Control | Description |
+| ------- | ----------- |
+| **All** | Show all GRNs |
+| **Select Column** | Choose the column you want to search in |
+| **Search by** | Type to filter the list by the selected column |
+| **Export to Excel** | Download the list as an Excel file |
+| **Create Goods Received Note** | Open a new GRN (top right) |
+
+Click a column heading to sort the list. Use **Rows per page** and the page arrows at the bottom to move through the list.
+
+### Columns
+
+| Column | Description |
+| ------ | ----------- |
+| **GRN Number** | The GRN number, for example `GRN-2026-09-000620` |
+| **GRN Date** | The date the goods were received |
+| **Delivery Date** | The delivery date of the goods |
+| **Purchase Order Number** | The purchase order this GRN was created from. Empty if the GRN was created directly |
+| **Location** | The location that received the goods |
+| **Supplier Invoice Number** | The supplier's own invoice number for the delivery |
+| **Supplier Code** | The supplier code |
+| **Supplier Name** | The supplier name |
+| **Total Amount** | Amount before tax |
+| **Total Tax Amount** | Total tax |
+| **Total Net Amount** | Final amount including tax |
+| **Created By** | The user who created the GRN |
+| **Updated By** | The user who last changed it |
+| **Action** | Edit, delete and view icons |
+
+### Action Icons
+
+| Icon | Description |
+| ---- | ----------- |
+| **Pencil (Edit)** | Open the GRN to change it |
+| **Bin (Delete)** | Delete the GRN |
+| **Eye (View)** | Open the GRN to view it only, without changing it |
+
+These icons work the same way on every document in the system. See [Action Icons](/purchase/purchase_order#action-icons).
+
+---
+
+## Create a GRN
+
+You can create a GRN in two ways:
+
+| Method | Description |
+| ------ | ----------- |
+| **From a Purchase Order** | Open the purchase order and click **Convert to GRN**. You can convert fully or partially. See [Convert to GRN](/purchase/purchase_order#convert-to-grn) |
+| **Directly** | Click **Create Goods Received Note** on the GRN list and enter the supplier and items |
+
+Items are added the same way on every document: **Upload Products** (CSV file), **Quick Add Items** or **Add**. See [Adding Items to the Invoice](/sales/sales_entry/sales_invoice#adding-items-to-the-invoice).
+
+{/* TODO: add the GRN create/edit screen: header fields, item columns, buttons, Other Expenses tab, printing (invoice and barcode). */}
+
+---
+
+## Printing
+
+Printing works the same way on every document. See [Saving and Printing](/sales/sales_entry/sales_invoice#saving-and-printing). Barcodes for the received items can be printed from the GRN. See [Barcode Printing](/product/barcode_printing/overview).
