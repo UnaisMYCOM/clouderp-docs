@@ -161,6 +161,52 @@
       ]
     },
     {
+      "group": "Purchase Management",
+      "tab": "purchase",
+      "pages": [
+        {
+          "title": "Overview",
+          "href": "/purchase"
+        },
+        {
+          "title": "Purchase Order",
+          "href": "/purchase/purchase_order"
+        },
+        {
+          "title": "Goods Received Note",
+          "href": "/purchase/grn"
+        },
+        {
+          "title": "Purchase Return",
+          "href": "/purchase/purchase_return"
+        },
+        {
+          "title": "Material Issue",
+          "href": "/purchase/material_issue"
+        },
+        {
+          "title": "Production",
+          "href": "/purchase/production"
+        },
+        {
+          "title": "Production Planner",
+          "href": "/purchase/production_planner"
+        },
+        {
+          "title": "Supplier Agreements",
+          "href": "/purchase/supplier_agreements"
+        },
+        {
+          "title": "Purchase Payments",
+          "href": "/purchase/purchase_payments"
+        },
+        {
+          "title": "Reports",
+          "href": "/purchase/reports"
+        }
+      ]
+    },
+    {
       "group": "Mycom Setup",
       "tab": "mycom",
       "pages": [
@@ -192,13 +238,18 @@
     },
     {
       "id": "product",
-      "title": "Product",
+      "title": "Product Management",
       "href": "/product"
     },
     {
       "id": "sales",
-      "title": "Sales",
+      "title": "Sales Management",
       "href": "/sales"
+    },
+    {
+      "id": "purchase",
+      "title": "Purchase Management",
+      "href": "/purchase"
     },
     {
       "id": "mycom",
