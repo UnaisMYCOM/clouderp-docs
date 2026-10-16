@@ -48,15 +48,13 @@ Fields marked with **\*** are mandatory. After a purchase order is saved, these 
 | **Delivery Date \*** | The date you expect the goods to be delivered |
 | **Location \*** | The location (branch) placing the order, for example `001 - Dubai` |
 | **Sub Location Code \*** | The sub location the goods are for, for example `001 - Sales` |
-| **Purchase Type \*** | The type of purchase, for example `International` |
+| **Purchase Type \*** | Whether the purchase is `International` or `Local` |
 | **Supplier Code \*** | The supplier you are ordering from |
 | **Supplier Name** | Filled in automatically from the supplier |
 | **Supplier Contact** | Filled in automatically from the supplier |
-| **PO Type \*** | The type of purchase order, for example `Direct` |
+| **PO Type \*** | How the purchase order is raised: `Direct` or `Material Request` |
 | **Remarks** | Any free-text notes |
-| **No Tax** | Tick this if the purchase order should be created without tax |
-
-{/* TODO: confirm the options for Purchase Type and PO Type, and what No Tax does. */}
+| **No Tax** | Tick this to create the purchase order without tax |
 
 The totals bar shows **PO Total Amount**, **Total Tax Amount** and **Total Net Amount**.
 
@@ -71,7 +69,7 @@ Items are added the same way on every document: **Upload Products** (CSV file), 
 | **Line Number** | Line number of the item |
 | **Code** | Product code |
 | **Description** | Name of the product |
-| **Pack Id** | The pack or unit the item is bought in |
+| **Pack Id** | The unit of measure (UOM) the item is bought in |
 | **Quantity** | Quantity ordered |
 | **Unit Price** | Price per unit |
 | **Total Amount** | Amount before tax |
